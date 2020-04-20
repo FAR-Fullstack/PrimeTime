@@ -1,18 +1,5 @@
 <div class="wrapper">
 
-
-<!-- banner -->
-
-<div id="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">Our Events</a>
-  <a href="#contact">Contact Us</a>
-</div>
-
-
-
-
-
   <div class="content">
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('primetimelogo1.png')%>);">
   <div class="container">
@@ -34,7 +21,13 @@
 </div>
 
 </div>
-
+<section>
+  <div id="events">
+    <h2>Hello, I'm the events!</h2>
+    <a href="/past_events">See all the past events</a>
+    <a href="/future_events">See all the future events</a>
+  </div>
+</section>
     <!-- footer -->
     <div class="footer">
       <div class="footer-links">
@@ -47,6 +40,7 @@
       <div class="footer-copyright">
         Website made with <i class="fas fa-heart"></i> by FAR
       </div>
+      <div><%= link_to "Admin corner", new_user_session_path %></div>
     </div>
 
 <script>
