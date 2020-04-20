@@ -1,8 +1,9 @@
 <!-- For now, it is a list because we don't have the card component -->
 
-<% @past_events.each do |p| %>
 <ul>
-  <li><%= p.title %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
+<% @past_events.each do |p| %>
+
+  <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
     </li>
-</ul>
 <% end %>
+</ul>

@@ -1,0 +1,20 @@
+<div class="container">
+  <h1><%= @past_event.title %></h1>
+  <ul>
+    <li><%= @past_event.description %></li>
+    <li><%= @past_event.date_start %></li>
+    <li><%= @past_event.date_end %></li>
+    <li><%= @past_event.location %></li>
+    <% if !@past_event.pictures.nil? %>
+      <li>
+        <ul>
+        <% @past_event.pictures.each do |picture| %>
+          <li><%= picture.link %></li>
+        <% end %>
+        </ul>
+      </li>
+      <% end %>
+</ul>
+<p class="text-center" id="edit"><%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_past_event_path(@past_event), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
+<p class="text-center" id="trash"><%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, past_event_path(@past_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
+</div>
