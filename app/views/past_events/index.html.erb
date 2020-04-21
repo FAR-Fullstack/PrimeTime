@@ -1,14 +1,12 @@
 <!-- For now, it is a list because we don't have the card component -->
 <div class="container">
 
+  <ul class="pt-300">
+  <% @past_events.each do |p| %>
+    <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
+      </li>
+  <% end %>
+  </ul>
 
-<ul class="pt-300">
-<% @past_events.each do |p| %>
-
-  <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
-    </li>
-<% end %>
-</ul>
-
-<%= link_to 'Add a past event', "past_events/new", class: "btn btn-primary" %>
+  <%= link_to 'Add a past event', "past_events/new", class: "btn btn-primary" %>
 </div>

@@ -5,7 +5,11 @@
     <a href="#home">Home</a>
     <a href="#events">Our Events</a>
     <a href="#contact">Contact Us</a>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
+    <% if current_user %>
+    <%= link_to "Add past events", new_past_event_path %>
+    <%= link_to "Add future events", new_future_event_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
   </div>
 
   <!-- content -->
