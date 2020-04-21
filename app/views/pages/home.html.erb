@@ -35,8 +35,20 @@
 <section>
   <div id="events">
     <h2>Hello, I'm the events!</h2>
-    <a href="/past_events">See all the past events</a>
-    <a href="/future_events">See all the future events</a>
+    <h3>Past Events</h3>
+    <ul class="pt-300">
+      <% @past_events.each do |past_event| %>
+        <li><%= current_user ? (link_to past_event.title, past_event) : past_event.title %>, <%= past_event.description %> <%= past_event.location %>. From <%= past_event.date_start %> to <%= past_event.date_end %>.
+        </li>
+      <% end %>
+    </ul>
+    <h3>Future Events</h3>
+    <ul>
+      <% @future_events.each do |future_event| %>
+        <li><%= current_user ? (link_to future_event.title, future_event) : future_event.title %>, <%= future_event.description %> <%= future_event.location %>. From <%= future_event.date_start %> to <%= future_event.date_end %>.
+        </li>
+      <% end %>
+    </ul>
   </div>
 </section>
     <!-- footer -->
