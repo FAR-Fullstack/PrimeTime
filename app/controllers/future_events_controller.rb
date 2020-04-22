@@ -39,7 +39,7 @@ def index
   private
 
   def future_event_params
-    params.require(:future_event).permit(:title, :description, :date_start, :date_end, :id)
+    params.require(:future_event).permit(:title, :description, :date_start, :date_end, :location, :id)
   end
 
 end

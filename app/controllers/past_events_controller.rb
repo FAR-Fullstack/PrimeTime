@@ -40,7 +40,7 @@ class PastEventsController < ApplicationController
   private
 
   def past_event_params
-    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :id)
+    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id)
   end
 
 end
