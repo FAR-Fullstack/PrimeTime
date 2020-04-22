@@ -1,39 +1,196 @@
 <div class="wrapper">
 
 
-<!-- banner -->
-
-<div id="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">Our Events</a>
-  <a href="#contact">Contact Us</a>
-</div>
-
+    <!-- navbar -->
+    <div id="navbar">
+      <a href="#home">Home</a>
+      <a href="#news">Our Events</a>
+      <a href="#contact">Contact Us</a>
+    </div>
 
 
+    <!-- banner with logo -->
+    <div class="banner responsive" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path('primetimelogo1.png')%>);">
+    </div>
 
+    <!-- intro section -->
+    <div class="intro">
+      <h2>OUR VISION</h2>
+      <p>The Korean culture has been omnipresent around the world through its music, food and TV series for years. This wave, best known as Hallyu, piqued and is still piquing people’s attention and we, at PRIMETIME, believe that the wave can be further spread through lot of other different facets of the emerging country.</p>
+      <p>Korea is the reference of innovation and technology, yet still unfamiliar or unknown to a lot of people. PRIMETIME aims to become the beacon spreading the Korean culture around the globe and let the world discover Hallyu in different ways.</p>
+    </div>
 
-  <div class="content">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('primetimelogo1.png')%>);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div>
+    <!-- pipeline events -->
+    <div class="pipeline">
+    <h3>OUR UPCOMING EVENTS</h3>
+      <div class="row">
 
-<div class="content">
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('primetimelogo1.png')%>);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div>
+        <div class="pipeline-card">
+          <img src="https://images.pexels.com/photos/382297/pexels-photo-382297.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Denim Jeans" style="width:100%">
+          <h5 class="pipeline-title">KOREAN ART FAIR</h5>
+          <p class="pipeline-text"><small class="text-muted">June 2020</small></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p><button class="button">More info</button></p>
+        </div>
 
-</div>
+        <div class="pipeline-card">
+          <img src="https://images.pexels.com/photos/2608516/pexels-photo-2608516.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Denim Jeans" style="width:100%">
+          <h5 class="pipeline-title">KOREAN TECHNOLOGY OF TOMORROW</h5>
+          <p class="pipeline-text"><small class="text-muted">September 2020</small></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p><button class="button">More info</button></p>
+        </div>
+      </div>
+
+      <!-- see more button showing more events -->      
+      <div>
+        <input type="checkbox" class="read-more-state" id="post-2" />
+      
+        <ul class="read-more-wrap">
+          <div class="row">
+          <div class="read-more-target pipeline-card"><img src="https://images.pexels.com/photos/66636/pexels-photo-66636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" style="width:100%">
+                <h5 class="pipeline-title">START-UPS B2B MEET-UPS AND SEMINARS</h5>
+                <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
+          </div>
+
+          <div class="read-more-target pipeline-card"><img src="https://images.pexels.com/photos/3321793/pexels-photo-3321793.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" style="width:100%">
+                <h5 class="pipeline-title">GUEST SPEAKERS CONFERENCES</h5>
+                <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
+          </div>    
+
+          <div class="read-more-target pipeline-card"><img src="https://images.pexels.com/photos/242422/pexels-photo-242422.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" style="width:100%">
+                <h5 class="pipeline-title">KOREAN CHRISTMAS MARKET</h5>
+                <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
+          </div>
+          </div>
+        </ul>
+        
+        <label for="post-2" class="read-more-trigger"></label>
+      </div>
+
+    </div>
+
+    <!-- events type section -->
+    <div class="col-container">
+      <h3>OUR BUSINESS STRUCTURE</h3>
+    <div class="card-deck">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">“LA NUIT DES CORÉATEURS”</h5>
+          <p class="card-text"><small class="text-muted">December 2019</small></p>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+          <a href="#" class="button">Productions</a>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">PRIVATE LAUNCHING EVENT
+    CAROLE FRANCK</h5>
+          <p class="card-text"><small class="text-muted">October 2019</small></p>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+          <a href="#" class="button">Private Events</a>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">K-STREET FOOD FESTIVAL</h5>
+          <p class="card-text"><small class="text-muted">September 2019</small></p>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+          <a href="#" class="button">Public Events</a>
+      </div>
+    </div>
+    </div>
+
+    <!-- meet the team -->
+    <div class="the-team">
+      <h3>MEET THE TEAM</h3>
+      <div class="row">
+        <div class="column">
+          <div class="team-card">
+            <img src="https://images.pexels.com/photos/3039620/pexels-photo-3039620.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Jane" style="width:100%">
+            <div class="team-container">
+              <h2>Jane Doe</h2>
+              <p class="title">CEO &amp; Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="team-card">
+            <img src="https://images.pexels.com/photos/2887718/pexels-photo-2887718.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mike" style="width:100%">
+            <div class="team-container">
+              <h2>Mike Ross</h2>
+              <p class="title">Art Director</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="team-card">
+            <img src="https://images.pexels.com/photos/4091685/pexels-photo-4091685.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mike" style="width:100%">
+            <div class="team-container">
+              <h2>Garfield</h2>
+              <p class="title">Mascote of the team</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="team-card">
+            <img src="https://images.pexels.com/photos/3635872/pexels-photo-3635872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="John" style="width:100%">
+            <div class="team-container">
+              <h2>John Doe</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- contact us section -->
+    <div class="contact-container">
+      <div style="text-align:center">
+        <h2>Contact Us</h2>
+        <p>Swing by for a cup of coffee, or leave us a message:</p>
+      </div>
+      <div class="row">
+        <div class="contact-column">
+          <img src="https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width:100%">
+        </div>
+        <div class="contact-column">
+          <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">France</option>
+              <option value="canada">South Korea</option>
+              <option value="usa">Other</option>
+            </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- footer -->
     <div class="footer">
@@ -49,17 +206,32 @@
       </div>
     </div>
 
-<script>
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
+  <script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
   }
-  prevScrollpos = currentScrollPos;
+
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }
-</script>
+  </script>
 <!-- end of wrapper -->
 </div>
