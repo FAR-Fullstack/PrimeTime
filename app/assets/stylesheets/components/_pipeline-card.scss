@@ -1,21 +1,21 @@
 .pipeline {
 	background-color: #FBFBF2;
 	padding: 25px;
-	margin-bottom: 25px;
-  height: 100vh;
+  height: auto;
 }
 
 .pipeline-row{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
+
 .pipeline-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  width: 50vh;
   margin: 20px;
   text-align: center;
-  font-family: arial;
   background-color: white;
   padding: 15px;
   border-radius: 5px;

@@ -1,8 +1,6 @@
 .business-structure-container {
-  padding: 25px;
   height: 100vh;
   background-color: #eee4e1;
-  height: 100vh;
 }
 
 .business-structure-container h3 {
@@ -26,6 +24,17 @@
   padding-bottom: 15px;
 }
 
+@media screen and (max-width: 600px) {
+  div.business-card {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
 .business-info h5 {
   padding-top: 25px;
 }
@@ -34,16 +43,16 @@
   padding: 0px 15px 15px 15px;
 }
 
-.business-container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+// .business-container::after, .row::after {
+//   content: "";
+//   clear: both;
+//   display: table;
+// }
 
-.business-structure-container {
-  display: table;
-  // height: auto;
-}
+// .business-structure-container {
+//   display: table;
+//   // height: auto;
+// }
 
 @media screen and (min-width: 601px) {
   div.business-structure-container h3 {

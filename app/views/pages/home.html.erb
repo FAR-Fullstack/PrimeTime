@@ -14,8 +14,7 @@
 
     <!-- banner with logo -->
     <div class="banner-and-intro">
-      <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);">
-      </div>
+      <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
 
       <!-- intro section -->
       <div class="intro">
@@ -24,32 +23,27 @@
         <p>Korea is the reference of innovation and technology, yet still unfamiliar or unknown to a lot of people. PRIMETIME aims to become the beacon spreading the Korean culture around the globe and let the world discover Hallyu in different ways.</p>
       </div>
     </div>
+
     <!-- pipeline events -->
     <div class="pipeline">
-
-      <h3>OUR UPCOMING EVENTS</h3>
+    <h3>OUR UPCOMING EVENTS</h3>
       <div class="col-container">
         <div class="pipeline-row">
-
+          <% @future_events.each do |future_event| %>
           <div class="pipeline-card">
-            <h5 class="pipeline-title">KOREAN ART FAIR</h5>
-            <p class="pipeline-text"><small class="text-muted">June 2020</small></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>   
+              <p><%= future_event.description.capitalize %></p>
+              <p class="pipeline-text"><%= future_event.location %></p>
+              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
             <button class="button">More Info</button>
           </div>
-
-          <div class="pipeline-card">
-            <h5 class="pipeline-title">KOREAN TECHNOLOGY OF TOMORROW</h5>
-            <p class="pipeline-text"><small class="text-muted">September 2020</small></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <button class="button">More Info</button>
-          </div>
-
+          <% end %>
         </div>
-      </div>
+      </div>     
+    </div>
 
       <!-- see more button showing more events -->      
-      <div>
+      <!-- <div>
         <input type="checkbox" class="read-more-state" id="post-2" />     
 
         <ul class="read-more-wrap">
@@ -74,7 +68,7 @@
         </ul>
         
         <label for="post-2" class="read-more-trigger"></label>
-      </div>
+      </div> -->
 
     </div>
 
@@ -115,74 +109,67 @@
 
       </div>
     </div>
-    <!-- past / future events -->
-    <section>
-      <div id="events">
-        <h2>Hello, I'm the events!</h2>
-        <h3>Past Events</h3>
-        <ul class="pt-300">
-          <% @past_events.each do |past_event| %>
-            <li><%= current_user ? (link_to past_event.title, past_event) : past_event.title %>, <%= past_event.description %> <%= past_event.location %>. From <%= past_event.date_start %> to <%= past_event.date_end %>.
-            </li>
-          <% end %>
-        </ul>
-        <h3>Future Events</h3>
-        <ul>
-          <% @future_events.each do |future_event| %>
-            <li><%= current_user ? (link_to future_event.title, future_event) : future_event.title %>, <%= future_event.description %> <%= future_event.location %>. From <%= future_event.date_start %> to <%= future_event.date_end %>.
-            </li>
-          <% end %>
-        </ul>
+
+    <!-- past events page-->
+    
+    <div class="past-events-section">
+      <h3>PAST EVENTS</h3>
+      <div class="col-container">
+        <div class="past-events-cards">
+            <% @past_events.each do |past_event| %>
+              <div class="event-card">
+                <div class="business-info">
+                  <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
+                  <h5 class="pipeline-title"><%= past_event.title.capitalize %></h5> 
+                  <p><%= past_event.description.capitalize %></p>
+                  <p class="pipeline-text"></p>
+                  <p class="pipeline-text"><%= past_event.date_start %> to </p>
+                </div>
+              </div>
+            <% end %>
+        </div>
       </div>
-    </section>
+    </div>
 
 
     <!-- meet the team -->
     <div class="the-team">
       <h3>MEET THE TEAM</h3>      
-      <div class="row">
+      <div class="team-row">
 
-        <div class="column">
+        <div class="team-column">
           <div class="team-card">
-            <div class="team-container">
-              <h4>Jay Lee</h4>
-              <h5 class="title">FOUNDER AND PRESIDENT</h5>
-              <p>+ 33 6 74 08 60 34</p>
-              <button class="button">example@example.com</button>
-            </div>
+              <h4>JAY LEE</h4>
+              <h6 class="title">FOUNDER AND PRESIDENT</h6>
+              <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+              <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
           </div>
         </div>
 
-        <div class="column">
+        <div class="team-column">
           <div class="team-card">
-            <div class="team-container">
               <h4>SAMUEL SONG</h4>
-              <h5 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-              <p>+ 33 6 74 08 60 34</p>
-              <button class="button">example@example.com</button>
-            </div>
+              <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+              <p class="pipeline-text"><small class="text-muted">+ 33 6 24 15 13 06</small></p>
+              <p class="pipeline-text"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>                
           </div>
         </div>
 
-        <div class="column">
+        <div class="team-column">
           <div class="team-card">
-            <div class="team-container">
               <h4>SEOYO LEE</h4>
-              <h5 class="title">HEAD OF SALES AND MARKETING</h5>
-              <p>+ 33 6 74 08 60 34</p>
-              <button class="button">example@example.com</button>
-            </div>
+              <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+              <p class="pipeline-text"><small class="text-muted">+ 33 6 99 46 74 33</small></p>
+              <p class="pipeline-text"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>               
           </div>
         </div>
 
-        <div class="column">
+        <div class="team-column">
           <div class="team-card">
-            <div class="team-container">
               <h4>SEBASTIEN HAN</h4>
-              <h5 class="title">HEAD OF COMMUNICATION AND PR</h5>
-              <p>+ 33 6 74 08 60 34</p>
-              <button class="button">example@example.com</button>
-            </div>
+              <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+              <p class="pipeline-text"><small class="text-muted">+ 33 7 60 00 19 94</small></p>
+              <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p> 
           </div>
         </div>
 
