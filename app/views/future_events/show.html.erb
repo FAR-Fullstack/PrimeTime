@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @future_event.title %></h1>
+  <ul>
+    <li><%= @future_event.description %></li>
+    <li><%= @future_event.date_start %></li>
+    <li><%= @future_event.date_end %></li>
+    <li><%= @future_event.location %></li>
+</ul>
+<p class="text-center" id="edit"><%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_future_event_path(@future_event) if current_user %></p>
+<p class="text-center" id="trash"><%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, future_event_path(@future_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
+</div>

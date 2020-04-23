@@ -1,0 +1,9 @@
+<!-- For now, it is a list because we don't have the card component -->
+
+<ul>
+<% @future_events.each do |f| %>
+
+  <li><%= link_to f.title, f if current_user %>, <%= f.description %> <%= f.location %>. From <%= f.date_start %> to <%= f.date_end %>.
+    </li>
+<% end %>
+</ul>
