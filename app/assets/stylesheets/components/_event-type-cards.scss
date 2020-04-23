@@ -1,21 +1,37 @@
-.business-structure-cards {
-  display: flex;
-  justify-content: center;
-  max-width: auto;
+.business-structure-container {
+  padding: 25px;
+  height: 100vh;
+  background-color: #eee4e1;
   height: 100vh;
 }
 
+.business-structure-container h3 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 10px;
+}
+
+.business-structure-cards {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
 .business-card {
+  max-width: 25%;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  h5 {
-    padding-top: 15px;
-  }
+  background-color: white;
+  padding-bottom: 15px;
 }
 
-.business-container {
-  padding: 0 16px;
+.business-info h5 {
+  padding-top: 25px;
+}
+
+.business-info p {
+  padding: 0px 15px 15px 15px;
 }
 
 .business-container::after, .row::after {
@@ -24,30 +40,19 @@
   display: table;
 }
 
-// this allows the cards to all be the same height based on the tallest one
-.col-container {
+.business-structure-container {
   display: table;
-  width: 100%;
-}
-
-.col-container h3 {
-  text-align: center;
-  color: #CCB774;
-  padding-top: 10px;
-}
-.col {
-  display: table-cell;
-  padding: 16px;
+  // height: auto;
 }
 
 @media screen and (min-width: 601px) {
-  div.col-container h3 {
+  div.business-structure-container h3 {
     font-size: 50px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  div.col-container h3 {
+  div.business-structure-container h3 {
     font-size: 30px;
   }
 }
