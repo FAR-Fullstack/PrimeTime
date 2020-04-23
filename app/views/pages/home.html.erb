@@ -26,12 +26,14 @@
 
     <!-- pipeline events -->
     <div class="pipeline">
-    <h3>OUR UPCOMING EVENTS</h3>
+    <h4>A GOAL WITHOUT A PLAN IS JUST A WISH</h4>
+    <h5>2020 EVENTS ON THE PIPELINE</h5> 
+    <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
       <div class="col-container">
         <div class="pipeline-row">
           <% @future_events.each do |future_event| %>
           <div class="pipeline-card">
-            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>   
+            <h4 class="pipeline-title"><%= future_event.title.capitalize %></h4>   
               <p><%= future_event.description.capitalize %></p>
               <p class="pipeline-text"><%= future_event.location %></p>
               <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
@@ -74,7 +76,9 @@
 
     <!-- events type section -->
     <div class="business-structure-container">
-      <h3>OUR BUSINESS STRUCTURE</h3>
+      <h5>HOW PRIMETIME OPERATES</h5>      
+      <h4>OUR BUSINESS STRUCTURE</h4>      
+      <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p>   
       <div class="business-structure-cards">
         
             <div class="business-card">
@@ -122,8 +126,8 @@
                   <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
                   <h5 class="pipeline-title"><%= past_event.title.capitalize %></h5> 
                   <p><%= past_event.description.capitalize %></p>
-                  <p class="pipeline-text"></p>
-                  <p class="pipeline-text"><%= past_event.date_start %> to </p>
+                  <p class="pipeline-text"><%= past_event.location %></p>
+                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start %> to <%= past_event.date_end %></small></p>
                 </div>
               </div>
             <% end %>
@@ -134,7 +138,9 @@
 
     <!-- meet the team -->
     <div class="the-team">
-      <h3>MEET THE TEAM</h3>      
+      <h5>PRIMETIME’S TEAM</h5>      
+      <h4>ALWAYS AT YOUR DISPOSAL</h4>      
+      <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>      
       <div class="team-row">
 
         <div class="team-column">
@@ -179,14 +185,13 @@
     <!-- contact us section -->
     <div class="contact-container">
       
-      <div style="text-align:center">
-        <h2>Contact Us</h2>
-        <p>Swing by for a cup of coffee, or leave us a message:</p>
+      <div class="contact-us">
+        <h3>CONTACT US</h3>
       </div>
 
       <div class="row">
         <div class="contact-column">
-          <img src="https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width:100%">
+          <div class="banner responsive logo" style="background-image: url(<%= asset_path('logo-transparent.png')%>);"></div>
         </div>
         <div class="contact-column">
           <form action="/action_page.php">
@@ -209,9 +214,6 @@
 
     </div>
 
-</div>
-
-
     <!-- footer -->
     <div class="footer">
       <div class="footer-links">
@@ -226,6 +228,8 @@
       </div>
       <div><%= link_to "Admin corner", new_user_session_path %></div>
     </div>
+
+
 
   <script>
   var prevScrollpos = window.pageYOffset;
@@ -254,5 +258,6 @@ for (i = 0; i < coll.length; i++) {
   });
 }
   </script>
+
 <!-- end of wrapper -->
 </div>

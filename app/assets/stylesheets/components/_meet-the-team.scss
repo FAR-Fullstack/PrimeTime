@@ -6,10 +6,27 @@
 //   box-sizing: inherit;
 // }
 
-.the-team h3 {
+.the-team {
+  padding: 25px;
+  height: auto;
+}
+
+.the-team h5 {
   text-align: center;
   color: #CCB774;
-  padding-top: 10px;
+  padding-top: 5px;
+}
+
+.the-team h4 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.the-team p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
 }
 
 .team-row {
@@ -47,24 +64,24 @@
 }
 
 .team-card {
-  padding: 15px;
-  text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  h5 {
-    padding-top: 15px;
-  }
+}
+
+.team-card h4 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 10px;
+}
+
+.team-card h6 {
+  text-align: center;
+  color: black;
 }
 
 .team-card::after, .row::after {
   content: "";
   clear: both;
   display: table;
-}
-
-.the-team h4 {
-  text-align: center;
-  color: #CCB774;
-  padding-top: 10px;
 }
 
 @media screen and (min-width: 601px) {

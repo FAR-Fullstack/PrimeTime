@@ -1,27 +1,42 @@
 .business-structure-container {
-  height: 100vh;
+  height: auto;
+  padding: 25px;
   background-color: #eee4e1;
 }
 
-.business-structure-container h3 {
+.business-structure-container h5 {
   text-align: center;
   color: #CCB774;
-  padding-top: 10px;
+  padding-top: 5px;
+}
+
+.business-structure-container h4 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.business-structure-container p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
 }
 
 .business-structure-cards {
   display: flex;
-  justify-content: space-around;
-  padding-top: 15px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .business-card {
-  max-width: 25%;
+  width: 50vh;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background-color: white;
   padding-bottom: 15px;
+  margin: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -54,14 +69,14 @@
 //   // height: auto;
 // }
 
-@media screen and (min-width: 601px) {
-  div.business-structure-container h3 {
-    font-size: 50px;
-  }
-}
+// @media screen and (min-width: 601px) {
+//   div.business-structure-container h5 {
+//     font-size: 50px;
+//   }
+// }
 
-@media screen and (max-width: 600px) {
-  div.business-structure-container h3 {
-    font-size: 30px;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   div.business-structure-container h5 {
+//     font-size: 30px;
+//   }
+// }

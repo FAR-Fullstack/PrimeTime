@@ -21,10 +21,27 @@
   border-radius: 5px;
 }
 
-.pipeline h3 {
+.pipeline-card {
+  text-align: center;
+  color: black !important;
+}
+
+.pipeline h4 {
   text-align: center;
   color: #CCB774;
-  padding-top: 10px;
+  padding-top: 5px;
+}
+
+.pipeline h5 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.pipeline p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
 }
 
 @media screen and (min-width: 601px) {
