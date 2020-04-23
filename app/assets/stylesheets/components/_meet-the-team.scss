@@ -6,6 +6,10 @@
 //   box-sizing: inherit;
 // }
 
+.the-team {
+  height: 100vh;
+}
+
 .column {
   float: left;
   width: 25%;
@@ -22,15 +26,22 @@
 
 .team-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .team-card img {
-  height: 300px;
-  object-fit: contain;
+  max-height: 300px;
+  border-radius: 5px 5px 0px 0px;;
+  object-fit: cover;
 }
 
 .team-container {
-  padding: 0 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  h5 {
+    padding-top: 15px;
+  }
 }
 
 .team-container::after, .row::after {

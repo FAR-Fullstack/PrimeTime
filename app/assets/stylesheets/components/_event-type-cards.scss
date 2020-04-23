@@ -1,4 +1,28 @@
+.business-structure-cards {
+  display: flex;
+  justify-content: center;
+  max-width: auto;
+  height: 100vh;
+}
 
+.business-card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  h5 {
+    padding-top: 15px;
+  }
+}
+
+.business-container {
+  padding: 0 16px;
+}
+
+.business-container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 // this allows the cards to all be the same height based on the tallest one
 .col-container {

@@ -1,5 +1,6 @@
 .intro {
 	padding: 25px;
+  height: 50vh;
 }
 
 .intro h2 {
@@ -9,7 +10,9 @@
 
 .intro p {
 	color: #E5E5E5;
-	font-size: 24px;
+	font-size: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 
@@ -25,14 +28,14 @@
   }
 }
 
-@media screen and (min-width: 601px) {
-  div.intro p {
-    font-size: 30px;
-  }
-}
+// @media screen and (min-width: 601px) {
+//   div.intro p {
+//     font-size: 30px;
+//   }
+// }
 
-@media screen and (max-width: 600px) {
-  div.intro p {
-    font-size: 24px;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   div.intro p {
+//     font-size: 24px;
+//   }
+// }

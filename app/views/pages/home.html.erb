@@ -13,7 +13,7 @@
   </div>
 
     <!-- banner with logo -->
-    <div class="banner responsive" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path('primetimelogo1.png')%>);">
+    <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);">
     </div>
 
     <!-- intro section -->
@@ -80,40 +80,101 @@
     <!-- events type section -->
     <div class="col-container">
       <h3>OUR BUSINESS STRUCTURE</h3>
-      <div class="card-deck">
-
-        <div class="card">
-          <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">“LA NUIT DES CORÉATEURS”</h5>
-            <p class="card-text"><small class="text-muted">December 2019</small></p>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="business-structure-cards">
+        
+          <div class="col">
+            <div class="business-card">
+              <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+              <div class="business-container">
+                <h5>PRODUCTION</h5>
+                <p>Audit, analysis, marketing and recommendations, as well as content
+              creation around and during your events. Our clients all have different needs and objectives.</p>
+                <p><button class="button">Past Productions</button></p>
+              </div>
+            </div>
           </div>
-            <a href="#" class="button">Productions</a>
-        </div>
 
-        <div class="card">
-          <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">PRIVATE LAUNCHING EVENT CAROLE FRANCK</h5>
-            <p class="card-text"><small class="text-muted">October 2019</small></p>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-            <a href="#" class="button">Private Events</a>
-        </div>
+<!--           <div class="col">
+            <div class="business-card">
+              <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
+              <div class="business-container">
+                <h5>PRIVATE EVENTS</h5>
+                <p>Creation and planning of customized events for our private clients, that are as distinctive
+              as they are compelling. Every event has a purpose, a message to communicate and an objective to meet.</p>
+                <p><button class="button">Past Private Events</button></p>
+              </div>
+            </div>
+          </div> -->
 
-        <div class="card">
-          <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">K-STREET FOOD FESTIVAL</h5>
-            <p class="card-text"><small class="text-muted">September 2019</small></p>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <div class="col">
+            <div class="business-card">
+              <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+              <div class="business-container">
+                <h5>PUBLIC EVENTS</h5>
+                <p>Creating a unique experience in the collaboration of the city of Paris through
+              public and free events and festivals centered in one particular theme in related with Korea throughout the year.</p>
+                <p><button class="button">Past Public Events</button></p>
+              </div>
+            </div>
           </div>
-            <a href="#" class="button">Public Events</a>
-        </div>
 
       </div>
+
+
+      <!-- <div class="card-deck"> -->
+
+        <!-- <div class="card">
+          <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">PRODUCTION</h5>
+            <p class="card-text">Audit, analysis, marketing and recommendations, as well as content
+            creation around and during your events. Our clients all have different needs and objectives.</p>
+          </div>
+            <a href="#" class="button">See past Productions</a>
+        </div> -->
+
+        <!-- <div class="card">
+          <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">PRIVATE EVENTS</h5>
+            <p class="card-text">Creation and planning of customized events for our private clients, that are as distinctive
+            as they are compelling. Every event has a purpose, a message to communicate and an objective to meet.</p>
+          </div>
+            <a href="#" class="button">See past Private Events</a>
+        </div> -->
+
+      <!--   <div class="card">
+          <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">PUBLIC EVENTS</h5>
+            <p class="card-text">Creating a unique experience in the collaboration of the city of Paris through
+            public and free events and festivals centered in one particular theme in related with Korea throughout the year.</p>
+          </div>
+            <a href="#" class="button">See past Public Events</a>
+        </div> -->
+
     </div>
+    <!-- past / future events -->
+    <section>
+      <div id="events">
+        <h2>Hello, I'm the events!</h2>
+        <h3>Past Events</h3>
+        <ul class="pt-300">
+          <% @past_events.each do |past_event| %>
+            <li><%= current_user ? (link_to past_event.title, past_event) : past_event.title %>, <%= past_event.description %> <%= past_event.location %>. From <%= past_event.date_start %> to <%= past_event.date_end %>.
+            </li>
+          <% end %>
+        </ul>
+        <h3>Future Events</h3>
+        <ul>
+          <% @future_events.each do |future_event| %>
+            <li><%= current_user ? (link_to future_event.title, future_event) : future_event.title %>, <%= future_event.description %> <%= future_event.location %>. From <%= future_event.date_start %> to <%= future_event.date_end %>.
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+
 
     <!-- meet the team -->
     <div class="the-team">
@@ -122,52 +183,44 @@
 
         <div class="column">
           <div class="team-card">
-            <img src="https://images.pexels.com/photos/3039620/pexels-photo-3039620.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Jane" style="width:100%">
             <div class="team-container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO &amp; Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p><button class="button">Contact</button></p>
+              <h4>Jay Lee</h4>
+              <h5 class="title">FOUNDER AND PRESIDENT</h5>
+              <p>+ 33 6 74 08 60 34</p>
+              <p><button class="button">example@example.com</button></p>
             </div>
           </div>
         </div>
 
         <div class="column">
           <div class="team-card">
-            <img src="https://images.pexels.com/photos/2887718/pexels-photo-2887718.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mike" style="width:100%">
             <div class="team-container">
-              <h2>Mike Ross</h2>
-              <p class="title">Art Director</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p><button class="button">Contact</button></p>
+              <h4>SAMUEL SONG</h4>
+              <h5 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+              <p>+ 33 6 74 08 60 34</p>
+              <p><button class="button">example@example.com</button></p>
             </div>
           </div>
         </div>
 
         <div class="column">
           <div class="team-card">
-            <img src="https://images.pexels.com/photos/4091685/pexels-photo-4091685.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mascote" style="width:100%">
             <div class="team-container">
-              <h2>Garfield</h2>
-              <p class="title">Mascote of the team</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p><button class="button">Contact</button></p>
+              <h4>SEOYO LEE</h4>
+              <h5 class="title">HEAD OF SALES AND MARKETING</h5>
+              <p>+ 33 6 74 08 60 34</p>
+              <p><button class="button">example@example.com</button></p>
             </div>
           </div>
         </div>
 
         <div class="column">
           <div class="team-card">
-            <img src="https://images.pexels.com/photos/3635872/pexels-photo-3635872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="John" style="width:100%">
             <div class="team-container">
-              <h2>John Doe</h2>
-              <p class="title">Designer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p><button class="button">Contact</button></p>
+              <h4>SEBASTIEN HAN</h4>
+              <h5 class="title">HEAD OF COMMUNICATION AND PR</h5>
+              <p>+ 33 6 74 08 60 34</p>
+              <p><button class="button">example@example.com</button></p>
             </div>
           </div>
         </div>
@@ -209,25 +262,7 @@
     </div>
 
 </div>
-<section>
-  <div id="events">
-    <h2>Hello, I'm the events!</h2>
-    <h3>Past Events</h3>
-    <ul class="pt-300">
-      <% @past_events.each do |past_event| %>
-        <li><%= current_user ? (link_to past_event.title, past_event) : past_event.title %>, <%= past_event.description %> <%= past_event.location %>. From <%= past_event.date_start %> to <%= past_event.date_end %>.
-        </li>
-      <% end %>
-    </ul>
-    <h3>Future Events</h3>
-    <ul>
-      <% @future_events.each do |future_event| %>
-        <li><%= current_user ? (link_to future_event.title, future_event) : future_event.title %>, <%= future_event.description %> <%= future_event.location %>. From <%= future_event.date_start %> to <%= future_event.date_end %>.
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+
 
     <!-- footer -->
     <div class="footer">
