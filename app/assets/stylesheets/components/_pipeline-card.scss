@@ -4,13 +4,20 @@
 	margin-bottom: 25px;
 }
 
+.pipeline-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;  
+}
 .pipeline-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin: auto;
+  margin: 20px;
   text-align: center;
   font-family: arial;
   background-color: white;
+  padding: 15px;
 }
 
 .pipeline h3 {
@@ -63,6 +70,7 @@
   max-height: 0;
   font-size: 0;
   transition: .25s ease;
+  padding: 15px;
 }
 
 .read-more-state:checked ~ .read-more-wrap .read-more-target {
@@ -81,7 +89,9 @@
 
 .read-more-trigger {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  width: 100px;
   padding: 0 .5em;
   color: #666;
   font-size: .9em;
