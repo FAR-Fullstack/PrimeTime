@@ -58,3 +58,45 @@
 .business-info p {
   padding: 0px 15px 15px 15px;
 }
+
+// @media screen and (min-width: 601px) {
+//   div.business-structure-container h5 {
+//     font-size: 32px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  div.business-structure-container h5 {
+    font-size: 24px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+// @media screen and (min-width: 601px) {
+//   div.business-structure-container h4 {
+//     font-size: 40px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  div.business-structure-container h4 {
+    font-size: 32px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+// @media screen and (min-width: 601px) {
+//   div.business-structure-container p {
+//     font-size: 24px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  div.business-structure-container p {
+    font-size: 16px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

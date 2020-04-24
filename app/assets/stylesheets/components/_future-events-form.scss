@@ -1,0 +1,37 @@
+.form-container {
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 25px;
+  background-color: white;
+}
+
+.form-container h5 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.form-container p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-form {
+	width: 500px;
+}
+
+
+@media screen and (max-width: 600px) {
+  div.full-form {
+    height: auto;
+    width: 100%;
+    margin: 20px;
+  }
+}

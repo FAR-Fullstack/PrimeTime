@@ -1,10 +1,29 @@
 <!-- For now, it is a list because we don't have the card component -->
+  <div id="navbar">
+    <% if current_user %>
+    <%= link_to 'Back to main page', root_path %>
+    <%= link_to "Add future events", new_future_event_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
 
-<ul>
-<% @future_events.each do |f| %>
-
-  <li><%= link_to f.title, f if current_user %>, <%= f.description %> <%= f.location %>. From <%= f.date_start %> to <%= f.date_end %>.
-    </li>
-<% end %>
-  <%= link_to "Back to home page", :root %>
-</ul>
+<div class="my-pipeline">
+    <div class="my-pipeline-row">
+        <% @future_events.each do |f| %>
+        <div class="my-pipeline-card">
+            <h5 class="my-pipeline-title">
+                <%= link_to f.title, f if current_user %>
+            </h5>
+            <p>
+                <%= f.description %>
+            </p>
+            <p class="my-pipeline-text">
+                <%= f.location %>
+            </p>
+            <p class="my-pipeline-text"><small class="text-muted">
+                    <%= f.date_start %> to
+                    <%= f.date_end %></small></p>
+        </div>
+        <% end %>
+    </div>
+</div>

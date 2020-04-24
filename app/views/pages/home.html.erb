@@ -1,15 +1,19 @@
 <div class="wrapper">
-    <!-- navbar -->
-    <div id="navbar">
-        <a href="#home">Home</a>
-        <a href="#past-events">Our Events</a>
-        <a href="#contact">Contact Us</a>
-        <% if current_user %>
-        <%= link_to "Add past events", new_past_event_path %>
-        <%= link_to "Add future events", new_future_event_path %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% end %>
-    </div>
+
+  <!-- navbar -->
+  <div id="navbar">
+    <a href="#home">Home</a>
+    <a href="#events">Our Events</a>
+    <a href="#contact">Contact Us</a>
+    <% if current_user %>
+    <%= link_to "My future events", future_events_path %>
+    <%= link_to "Add future events", new_future_event_path %>
+    <%= link_to "My past events", past_events_path %>
+    <%= link_to "Add past events", new_past_event_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+
     <!-- banner with logo -->
     <div class="banner-and-intro">
         <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
@@ -22,29 +26,23 @@
     </div>
     <!-- pipeline events -->
     <div class="pipeline">
-        <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
-        <h4>2020 EVENTS ON THE PIPELINE</h4>
-        <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
-        <div class="col-container">
-            <div class="pipeline-row">
-                <% @future_events.each do |future_event| %>
-                <div class="pipeline-card">
-                    <h5 class="pipeline-title">
-                        <%= future_event.title.capitalize %>
-                    </h5>
-                    <p>
-                        <%= future_event.description.capitalize %>
-                    </p>
-                    <p class="pipeline-text">
-                        <%= future_event.location %>
-                    </p>
-                    <p class="pipeline-text"><small class="text-muted">
-                            <%= future_event.date_start %> to
-                            <%= future_event.date_end %></small></p>
-                    <button class="button">More Info</button>
-                </div>
-                <% end %>
-            </div>
+      
+    <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
+    <h4>2020 EVENTS ON THE PIPELINE</h4>
+    <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
+      <div class="col-container">
+        <div class="pipeline-row">
+          <% @future_events.each do |future_event| %>
+          <div class="pipeline-card">
+            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>
+              <p><%= future_event.description.capitalize %></p>
+              <p class="pipeline-text"><%= future_event.location %></p>
+              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
+<!--             <div class="button-separation">
+            <button class="button">More Info</button>
+            </div> -->
+          </div>
+          <% end %>
         </div>
     </div>
     <!-- see more button showing more events -->
@@ -75,6 +73,7 @@
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
 </div>
+  
 <!-- events type section -->
 <div class="business-structure-container">
     <h5>HOW PRIMETIME OPERATES</h5>
@@ -313,7 +312,7 @@ window.onscroll = function() {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
-        document.getElementById("navbar").style.top = "-50px";
+      document.getElementById("navbar").style.top = "-150px";
     }
     prevScrollpos = currentScrollPos;
 }
