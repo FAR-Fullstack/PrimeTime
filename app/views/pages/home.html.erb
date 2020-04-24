@@ -112,57 +112,29 @@
 </div>
 <!-- past events page-->
 <section id="past-events">
-
-<div class="past-events-section">
+  <div class="past-events-section">
     <h5>THINKING OUT OF THE BOX</h5>
     <h4>SOME EXPERIENCES WE HAVE CREATED</h4>
-    <div class="col-container">
+      <div class="col-container">
         <div class="past-events-cards">
-            <% @past_events.each_with_index do |past_event, index| %>
-            <div class="event-card">
-                <!-- Carousel START -->
-                <ol class="carousel-indicators">
-                    <% past_event.photos.each_with_index do |picture, index| %>
-                    <li data-target="carousel<%=index%>" data-slide-to="<%=index%>" class="<%= 'active' if index == 0 %>"></li>
-                    <% end %>
-                </ol>
-                <% past_event.photos.each_with_index do |photo, index| %>
-                <div class="carousel-inner">
-                    <div class="carousel-item <%= 'active' if index == 0 %>">
-                        <%= cl_image_tag photo.key, class: "items-image d-block" %>
-                    </div>
+            <% @past_events.each do |past_event| %>
+              <div class="event-card">
+                <div class="business-info">
+                  <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
+                  <h5 class="pipeline-title"><%= link_to past_event.title.capitalize, past_event if current_user %></h5>
+                  <p><%= past_event.description.capitalize %></p>
+                  <p class="pipeline-text"><%= past_event.location %></p>
+                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start %> to <%= past_event.date_end %></small></p>
                 </div>
-                <% end %>
-                <a class="carousel-control-prev" href="#carousel<%=index%>" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel<%=index%>" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            <!-- Carousel END -->
-            <div class="business-info">
-                <h5 class="pipeline-title">
-                  <%= link_to past_event.title.capitalize, past_event if current_user %>
-                    <%=  %>
-                </h5>
-                <p>
-                    <%= past_event.description.capitalize %>
-                </p>
-                <p class="pipeline-text">
-                    <%= past_event.location %>
-                </p>
-                <p class="pipeline-text"><small class="text-muted">
-                        <%= past_event.date_start %> to
-                        <%= past_event.date_end %></small></p>
-            </div>
-            </div>
+              </div>
+            <% end %>
         </div>
-        <% end %>
+      </div>
     </div>
-</div>
-</div>
+</section>
+
+
+
 <!-- CAROUSEL TEST -->
 <div class="past-events-cards">
     <div class="event-card">
@@ -187,7 +159,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-</section>
         <div class="business-info">
             <h5>PUBLIC EVENTS</h5>
             <p>Creating a unique experience in the collaboration of the city of Paris through
