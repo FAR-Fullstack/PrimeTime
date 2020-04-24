@@ -1,7 +1,9 @@
-<div class="row justify-content-center">
-    <div class="col-12">
-      <h4>Edit Future Event</h4>
-      <%= render 'form', future_event: @future_event %>
-      <%= link_to 'Back to home', root_path %> |
+<div class="form-container">
+    <h5>Edit Future Event</h5>
+    <div class="form-box">
+        <div class="full-form">
+            <%= render 'form', future_event: @future_event %>
+        </div>
     </div>
+    <p><%= link_to 'Back to home', root_path %></p>
 </div>

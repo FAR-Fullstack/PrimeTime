@@ -25,6 +25,7 @@
 .pipeline-card {
   text-align: center;
   color: black !important;
+  position: relative;
 }
 
 .pipeline h5 {
@@ -45,15 +46,46 @@
   padding-top: 5px;
 }
 
-@media screen and (min-width: 601px) {
-  div.pipeline h3 {
-    font-size: 50px;
+
+// @media screen and (min-width: 601px) {
+//   div.pipeline h5 {
+//     font-size: 32px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  div.pipeline h5 {
+    font-size: 24px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
+// @media screen and (min-width: 601px) {
+//   div.pipeline h4 {
+//     font-size: 40px;
+//   }
+// }
+
 @media screen and (max-width: 600px) {
-  div.pipeline h3 {
-    font-size: 30px;
+  div.pipeline h4 {
+    font-size: 32px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+// @media screen and (min-width: 601px) {
+//   div.pipeline p {
+//     font-size: 24px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  div.pipeline p {
+    font-size: 16px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
