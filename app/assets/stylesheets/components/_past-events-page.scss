@@ -1,6 +1,7 @@
 .past-events-section {
-  background-color: #aed9e0;
-  padding: 25px;
+  background-color: #FFFFFF;
+  padding-top: 25px;
+  padding-bottom: 25px;
   height: auto;
 }
 
@@ -8,6 +9,24 @@
   text-align: center;
   color: #CCB774;
   padding-top: 10px;
+}
+
+.past-events-section h5 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 5px;
+}
+
+.past-events-section h4 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.past-events-section p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
 }
 
 .past-events-cards {
@@ -28,6 +47,10 @@
   margin: 20px;
 }
 
+.business-info h5 {
+  padding: 15px;
+}
+
 @media screen and (min-width: 601px) {
   div.past-events-section h3 {
     font-size: 50px;
@@ -40,3 +63,8 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  div.event-card {
+    width: 100vw;
+  }
+}

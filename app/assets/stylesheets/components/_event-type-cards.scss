@@ -1,6 +1,7 @@
 .business-structure-container {
   height: auto;
-  padding: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: #eee4e1;
 }
 
@@ -57,26 +58,3 @@
 .business-info p {
   padding: 0px 15px 15px 15px;
 }
-
-// .business-container::after, .row::after {
-//   content: "";
-//   clear: both;
-//   display: table;
-// }
-
-// .business-structure-container {
-//   display: table;
-//   // height: auto;
-// }
-
-// @media screen and (min-width: 601px) {
-//   div.business-structure-container h5 {
-//     font-size: 50px;
-//   }
-// }
-
-// @media screen and (max-width: 600px) {
-//   div.business-structure-container h5 {
-//     font-size: 30px;
-//   }
-// }

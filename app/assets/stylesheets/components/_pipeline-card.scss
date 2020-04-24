@@ -1,6 +1,7 @@
 .pipeline {
 	background-color: #FBFBF2;
-	padding: 25px;
+	padding-top: 25px;
+  padding-bottom: 25px;
   height: auto;
 }
 
@@ -26,13 +27,13 @@
   color: black !important;
 }
 
-.pipeline h4 {
+.pipeline h5 {
   text-align: center;
   color: #CCB774;
   padding-top: 5px;
 }
 
-.pipeline h5 {
+.pipeline h4 {
   text-align: center;
   color: black;
   padding-top: 5px;
@@ -53,6 +54,12 @@
 @media screen and (max-width: 600px) {
   div.pipeline h3 {
     font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.pipeline-card {
+    width: 100vh;
   }
 }
 

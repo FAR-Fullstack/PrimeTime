@@ -1,5 +1,7 @@
 .banner-and-intro {
-  height: 100vh;
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .intro h2 {
@@ -8,7 +10,7 @@
 }
 
 .intro p {
-	color: grey;
+	color: #B8BAC8;
 	font-size: 24px;
   text-align: center;
 }

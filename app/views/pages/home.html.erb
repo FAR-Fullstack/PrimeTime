@@ -27,14 +27,14 @@
 
     <!-- pipeline events -->
     <div class="pipeline">
-    <h4>A GOAL WITHOUT A PLAN IS JUST A WISH</h4>
-    <h5>2020 EVENTS ON THE PIPELINE</h5>
+    <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
+    <h4>2020 EVENTS ON THE PIPELINE</h4>
     <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
       <div class="col-container">
         <div class="pipeline-row">
           <% @future_events.each do |future_event| %>
           <div class="pipeline-card">
-            <h4 class="pipeline-title"><%= future_event.title.capitalize %></h4>
+            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>
               <p><%= future_event.description.capitalize %></p>
               <p class="pipeline-text"><%= future_event.location %></p>
               <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
@@ -117,9 +117,9 @@
     </div>
 
     <!-- past events page-->
-
     <div class="past-events-section">
-      <h3>PAST EVENTS</h3>
+      <h5>THINKING OUT OF THE BOX</h5>
+      <h4>SOME EXPERIENCES WE HAVE CREATED</h4> 
       <div class="col-container">
         <div class="past-events-cards">
             <% @past_events.each do |past_event| %>
@@ -181,9 +181,10 @@
     <div class="full-team-cards">
       <div class="full-team-card">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
 
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
               <div class="team-column">
                 <div class="team-card">
                     <h4>JAY LEE</h4>
@@ -192,8 +193,6 @@
                     <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
-
-
 
               <div class="team-column">
                 <div class="team-card">
@@ -204,7 +203,6 @@
                 </div>
               </div>
 
-
               <div class="team-column">
                 <div class="team-card">
                     <h4>SEOYO LEE</h4>
@@ -214,8 +212,6 @@
                 </div>
               </div>
 
-
-
               <div class="team-column">
                 <div class="team-card">
                     <h4>SEBASTIEN HAN</h4>
@@ -224,55 +220,49 @@
                     <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
-
             </div>
 
             <div class="carousel-item">
-
               <div class="team-column">
                 <div class="team-card">
-                    <h4>FELIX RÖNN</h4>
-                    <h6 class="title"> TITLE </h6>
-                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                    <h4>EUN KIM</h4>
+                    <h6 class="title">SALES AND MARKETING MANAGER</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 78 52 52 21</small></p>
+                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
 
-
-
               <div class="team-column">
                 <div class="team-card">
-                    <h4>ALEXANDRE ZAGAME</h4>
-                    <h6 class="title"> TITLE </h6>
-                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                    <h4>HAYAN KIM</h4>
+                    <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 25 64 53 01</small></p>
+                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
 
-
               <div class="team-column">
                 <div class="team-card">
-                    <h4>RAPHAELLE NOUKA</h4>
-                    <h6 class="title"> TITLE </h6>
-                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                    <h4>SWAN KIM</h4>
+                    <h6 class="title">ON-SITE ASSOCIATE</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 16 84 10 72</small></p>
+                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
 
-
-
               <div class="team-column">
                 <div class="team-card">
-                    <h4>DANIEL HERMANSSON</h4>
-                    <h6 class="title"> TITLE </h6>
-                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                    <h4>KUNWOO KOO</h4>
+                    <h6 class="title">ON-SITE ASSOCIATE</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 89 96 38 32</small></p>
+                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                 </div>
               </div>
-
             </div>
+
           </div>
 
+        </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -282,13 +272,11 @@
             <span class="sr-only">Next</span>
           </a>
 
-        </div>
-
-          </div>
-        </div>
-
       </div>
     </div>
+
+    </div>
+  </div>
 
     <!-- contact us section -->
     <div class="contact-container">
@@ -315,7 +303,8 @@
             </select>
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-            <input type="submit" value="Submit">
+            <button class="button">Submit</button>
+        </div>
           </form>
         </div>
       </div>
