@@ -15,7 +15,7 @@
       </li>
       <% end %>
 </ul>
-<%= link_to "Back to home", :root %>
+<%= link_to "Back to past events", past_events_path %>
 <p class="text-center" id="edit"><%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_past_event_path(@past_event) %></p>
 <p class="text-center" id="trash"><%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, past_event_path(@past_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
 </div>
