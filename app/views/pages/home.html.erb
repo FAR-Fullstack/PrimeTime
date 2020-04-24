@@ -28,13 +28,13 @@
     <!-- pipeline events -->
     <div class="pipeline">
     <h4>A GOAL WITHOUT A PLAN IS JUST A WISH</h4>
-    <h5>2020 EVENTS ON THE PIPELINE</h5> 
+    <h5>2020 EVENTS ON THE PIPELINE</h5>
     <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
       <div class="col-container">
         <div class="pipeline-row">
           <% @future_events.each do |future_event| %>
           <div class="pipeline-card">
-            <h4 class="pipeline-title"><%= future_event.title.capitalize %></h4>   
+            <h4 class="pipeline-title"><%= future_event.title.capitalize %></h4>
               <p><%= future_event.description.capitalize %></p>
               <p class="pipeline-text"><%= future_event.location %></p>
               <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
@@ -42,13 +42,13 @@
           </div>
           <% end %>
         </div>
-      </div>     
+      </div>
     </div>
 
 
-     <!-- see more button showing more events -->      
+     <!-- see more button showing more events -->
       <!-- <div>
-        <input type="checkbox" class="read-more-state" id="post-2" />     
+        <input type="checkbox" class="read-more-state" id="post-2" />
 
         <ul class="read-more-wrap">
           <div class="pipeline-row">
@@ -61,7 +61,7 @@
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">GUEST SPEAKERS CONFERENCES</h5>
                   <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
-            </div>    
+            </div>
 
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">KOREAN CHRISTMAS MARKET</h5>
@@ -70,7 +70,7 @@
 
           </div>
         </ul>
-        
+
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
 
@@ -78,11 +78,11 @@
 
     <!-- events type section -->
     <div class="business-structure-container">
-      <h5>HOW PRIMETIME OPERATES</h5>      
-      <h4>OUR BUSINESS STRUCTURE</h4>      
-      <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p>   
+      <h5>HOW PRIMETIME OPERATES</h5>
+      <h4>OUR BUSINESS STRUCTURE</h4>
+      <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p>
       <div class="business-structure-cards">
-        
+
             <div class="business-card">
               <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
                 <div class="business-info">
@@ -117,7 +117,7 @@
     </div>
 
     <!-- past events page-->
-    
+
     <div class="past-events-section">
       <h3>PAST EVENTS</h3>
       <div class="col-container">
@@ -126,7 +126,7 @@
               <div class="event-card">
                 <div class="business-info">
                   <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
-                  <h5 class="pipeline-title"><%= past_event.title.capitalize %></h5> 
+                  <h5 class="pipeline-title"><%= past_event.title.capitalize %></h5>
                   <p><%= past_event.description.capitalize %></p>
                   <p class="pipeline-text"><%= past_event.location %></p>
                   <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start %> to <%= past_event.date_end %></small></p>
@@ -173,44 +173,119 @@
 
     <!-- meet the team -->
     <div class="the-team">
-      <h5>PRIMETIME’S TEAM</h5>      
-      <h4>ALWAYS AT YOUR DISPOSAL</h4>      
-      <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>      
+      <h5>PRIMETIME’S TEAM</h5>
+      <h4>ALWAYS AT YOUR DISPOSAL</h4>
+      <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>
       <div class="team-row">
 
-        <div class="team-column">
-          <div class="team-card">
-              <h4>JAY LEE</h4>
-              <h6 class="title">FOUNDER AND PRESIDENT</h6>
-              <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-              <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+    <div class="full-team-cards">
+      <div class="full-team-card">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>JAY LEE</h4>
+                    <br>
+                    <h6 class="title">FOUNDER AND PRESIDENT</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+                    <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>SAMUEL SONG</h4>
+                    <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 24 15 13 06</small></p>
+                    <p class="pipeline-text"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>SEOYO LEE</h4>
+                    <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 99 46 74 33</small></p>
+                    <p class="pipeline-text"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>SEBASTIEN HAN</h4>
+                    <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 7 60 00 19 94</small></p>
+                    <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="carousel-item">
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>FELIX RÖNN</h4>
+                    <br>
+                    <h6 class="title"> TITLE </h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>ALEXANDRE ZAGAME</h4>
+                    <h6 class="title"> TITLE </h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>RAPHAELLE NOUKA</h4>
+                    <h6 class="title"> TITLE </h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+
+
+              <div class="team-column">
+                <div class="team-card">
+                    <h4>DANIEL HERMANSSON</h4>
+                    <h6 class="title"> TITLE </h6>
+                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
+                    <p class="pipeline-text"><small class="text-muted">TESTING@PRIMETIMEFR.COM</small></p>
+                </div>
+              </div>
+
+            </div>
           </div>
+
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
         </div>
 
-        <div class="team-column">
-          <div class="team-card">
-              <h4>SAMUEL SONG</h4>
-              <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-              <p class="pipeline-text"><small class="text-muted">+ 33 6 24 15 13 06</small></p>
-              <p class="pipeline-text"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>                
-          </div>
-        </div>
-
-        <div class="team-column">
-          <div class="team-card">
-              <h4>SEOYO LEE</h4>
-              <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-              <p class="pipeline-text"><small class="text-muted">+ 33 6 99 46 74 33</small></p>
-              <p class="pipeline-text"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>               
-          </div>
-        </div>
-
-        <div class="team-column">
-          <div class="team-card">
-              <h4>SEBASTIEN HAN</h4>
-              <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-              <p class="pipeline-text"><small class="text-muted">+ 33 7 60 00 19 94</small></p>
-              <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p> 
           </div>
         </div>
 
@@ -219,7 +294,7 @@
 
     <!-- contact us section -->
     <div class="contact-container">
-      
+
       <div class="contact-us">
         <h3>CONTACT US</h3>
       </div>
