@@ -7,8 +7,9 @@
 // }
 
 .the-team {
-  padding: 25px;
   height: auto;
+  background-color: #F2EDEB;
+  padding-top: 25px;
 }
 
 .the-team h5 {
@@ -44,8 +45,10 @@
 
 .team-column {
   float: left;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   padding: 25px;
+  width: 25vw;
+  // height: 250px;
 }
 
 @media screen and (max-width: 650px) {
@@ -59,16 +62,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 25px;
-}
-
-.team-card img {
-  max-height: 300px;
-  border-radius: 5px 5px 0px 0px;;
-  object-fit: cover;
-}
-
-.team-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .team-card h4 {
