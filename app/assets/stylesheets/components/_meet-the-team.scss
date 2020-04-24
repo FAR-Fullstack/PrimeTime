@@ -1,0 +1,96 @@
+// html {
+//   box-sizing: border-box;
+// }
+
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }
+
+.the-team {
+  height: auto;
+  background-color: #F2EDEB;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.the-team h5 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 5px;
+}
+
+.the-team h4 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.the-team p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
+}
+
+.full-team-card {
+  width: 100%;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 15px;
+}
+
+
+.team-column {
+  float: left;
+  // margin-bottom: 16px;
+  padding: 25px;
+  width: 25vw;
+  // height: 250px;
+}
+
+@media screen and (max-width: 650px) {
+  .team-column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.team-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 25px;
+  background-color: white;
+}
+
+.team-card h4 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 10px;
+}
+
+.team-card h6 {
+  text-align: center;
+  color: black;
+}
+
+.team-card::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (min-width: 601px) {
+  div.the-team h3 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.the-team h3 {
+    font-size: 30px;
+  }
+}

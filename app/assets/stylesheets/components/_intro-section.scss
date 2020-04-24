@@ -1,0 +1,45 @@
+.banner-and-intro {
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.intro h2 {
+	text-align: center;
+	color: #CCB774;
+}
+
+.intro p {
+	color: #B8BAC8;
+	font-size: 24px;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 601px) {
+  div.intro h2 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.intro h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  div.intro p {
+    font-size: 24px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.intro p {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

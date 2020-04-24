@@ -20,6 +20,6 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    require(params.require(:picture).permit(:id, :link)
+    require(params.require(:picture).permit(:id, :link))
   end
 end

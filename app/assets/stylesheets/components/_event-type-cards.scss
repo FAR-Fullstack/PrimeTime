@@ -1,0 +1,60 @@
+.business-structure-container {
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #eee4e1;
+}
+
+.business-structure-container h5 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 5px;
+}
+
+.business-structure-container h4 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.business-structure-container p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
+}
+
+.business-structure-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.business-card {
+  width: 45vh;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: white;
+  padding-bottom: 15px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  div.business-card {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.business-info h5 {
+  padding-top: 25px;
+}
+
+.business-info p {
+  padding: 0px 15px 15px 15px;
+}

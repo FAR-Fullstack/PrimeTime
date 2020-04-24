@@ -1,12 +1,13 @@
 .footer {
-  background: white;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 50px 50px;
+  height: auto;
+  padding: 30px;
   color: rgba(0,0,0,0.3);
   flex-direction: column;
+  flex-shrink: 0;
 }
 .footer-links {
   display: flex;
@@ -28,7 +29,4 @@
 
 .footer-copyright {
   padding-bottom: 15px;
-}
-.footer {
-  flex-shrink: 0;
 }
