@@ -1,6 +1,6 @@
 .form-container {
   height: 100%;
-  padding-top: 25px;
+  padding-top: 60px;
   padding-bottom: 25px;
   background-color: white;
 }
@@ -10,6 +10,11 @@
   color: #CCB774;
   padding-top: 5px;
   font-size: 30px;
+}
+
+.form-container p {
+  text-align: center;
+  font-size: 15px;
 }
 
 .form-box {
