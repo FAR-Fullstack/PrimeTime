@@ -21,9 +21,20 @@ FutureEvent.create(params3)
 FutureEvent.create(params2)
 FutureEvent.create(params1)
 
-puts "Creating pictures"
-Picture.create(link: "https://unsplash.com/photos/4f4YZfDMLeU", past_event_id: p1.id)
-Picture.create(link: "https://unsplash.com/photos/UZI_guz1kJQ", past_event_id: p1.id)
-Picture.create(link: "https://unsplash.com/photos/hipcPLJE4uk", past_event_id: p2.id)
-Picture.create(link: "https://unsplash.com/photos/VZG8SrrOcs4", past_event_id: p3.id)
-Picture.create(link: "https://unsplash.com/photos/_Jhg2NTkATM", past_event_id: p1.id)
+puts "Seeding..."
+sleep(1)
+puts ">"
+puts ">"
+puts ">"
+puts ">"
+puts "Wait for it..."
+sleep(1)
+puts ">"
+puts ">"
+puts ">"
+puts ">"
+puts ">"
+sleep(1)
+puts "...done"
+
+
