@@ -13,9 +13,9 @@ class PastEventsController < ApplicationController
 
   def create
     @past_event = PastEvent.new(past_event_params)
-    past_event_params[:photos].each do |photo|
-        @past_event.photos.attach(photo)
-    end
+    # past_event_params[:photos].each do |photo|
+    #     @past_event.photos.attach(photo)
+    # end
     if @past_event.save
       redirect_to past_events_path, notice: 'successfully created.'
     else

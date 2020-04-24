@@ -6,4 +6,5 @@
   <li><%= link_to f.title, f if current_user %>, <%= f.description %> <%= f.location %>. From <%= f.date_start %> to <%= f.date_end %>.
     </li>
 <% end %>
+  <%= link_to "Back to future events", future_events_path %>
 </ul>
