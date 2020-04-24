@@ -7,6 +7,8 @@
   padding: 50px 50px;
   color: rgba(0,0,0,0.3);
   flex-direction: column;
+  flex-shrink: 0;
+  margin-top: 15px;
 }
 .footer-links {
   display: flex;
@@ -28,7 +30,4 @@
 
 .footer-copyright {
   padding-bottom: 15px;
-}
-.footer {
-  flex-shrink: 0;
 }

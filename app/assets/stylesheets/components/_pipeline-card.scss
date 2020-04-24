@@ -1,0 +1,102 @@
+.pipeline {
+	background-color: #FBFBF2;
+	padding: 25px;
+  height: auto;
+}
+
+.pipeline-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pipeline-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 50vh;
+  margin: 20px;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.pipeline-card {
+  text-align: center;
+  color: black !important;
+}
+
+.pipeline h4 {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 5px;
+}
+
+.pipeline h5 {
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+}
+
+.pipeline p {
+  text-align: center;
+  color: grey;
+  padding-top: 5px;
+}
+
+@media screen and (min-width: 601px) {
+  div.pipeline h3 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.pipeline h3 {
+    font-size: 30px;
+  }
+}
+
+// see more events
+.read-more-state {
+  display: none;
+}
+
+.read-more-wrap{
+
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+  padding: 15px;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+}
+
