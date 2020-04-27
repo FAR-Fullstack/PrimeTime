@@ -9,25 +9,30 @@
     <% end %>
   </div>
 
-<div class="past-event-container">
+<div class="past-event-container show">
+    <div class="row">
+        
+        <div class="past-event-info show">
+            <h5>
+                <%= @past_event.title %>
+            </h5>
+            <p>
+                <%= @past_event.description %>
+            </p>
+            <p> <strong>
+                    <%= @past_event.location %></strong> from
+                <%= @past_event.date_start %> to
+                <%= @past_event.date_end %>
+            </p>
+            <% if !@past_event.photos.empty? %>
+            </p>
+            <% end %>
+        </div>
 
-  <div class="row"> 
-      <% @past_event.photos.each do |photo| %>
-    <div class="column">
-      <%= cl_image_tag photo.key, style:"width:100%" %>
+        <% @past_event.photos.each do |photo| %>
+        <div class="column">
+            <%= cl_image_tag photo.key, style:"width:100%" %>
+        </div>
+        <% end %>
     </div>
-      <% end %>
-
-    <div class="past-event-info">
-      <h5><%= @past_event.title %></h5>
-      <p><%= @past_event.description %></p>
-      <p><%= @past_event.location %> from
-      <%= @past_event.date_start %> to
-      <%= @past_event.date_end %></p>
-       <% if !@past_event.photos.empty? %></p>
-       <% end %>
-    </div>
-
-  </div>
-
 </div>

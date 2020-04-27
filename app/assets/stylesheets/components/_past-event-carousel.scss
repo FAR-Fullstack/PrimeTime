@@ -8,10 +8,22 @@ img {vertical-align: middle;}
   // background-color:s #eee4e1;
 }
 
+.button a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.button a:hover {
+  color: #CCB774;
+  // background-color: black;
+  background-color: #f2f2f2;
+}
+
+
 .event-structure-container h5 {
   text-align: center;
   color: #CCB774;
-  padding-top: 5px;
+
 }
 
 .event-structure-container h4 {
@@ -23,6 +35,10 @@ img {vertical-align: middle;}
 
 .event-structure-container.index h4 {
   padding-top: 50px;
+}
+
+.past-event-info.show h5 {
+  margin-top: 50px;
 }
 
 .event-structure-container p {
@@ -141,7 +157,10 @@ img {vertical-align: middle;}
 .column img {
   // margin-top: 8px;
   vertical-align: middle;
-  width: 100%;
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  padding: 5px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
