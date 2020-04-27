@@ -27,9 +27,9 @@
     <!-- pipeline events -->
     <div class="pipeline">
       
-    <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
-    <h4>2020 EVENTS ON THE PIPELINE</h4>
-    <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
+    <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
+    <h4>WHAT IS COMING</h4>
+    <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
       <div class="col-container">
         <div class="pipeline-row">
           <% @future_events.each do |future_event| %>
@@ -78,9 +78,9 @@
   
 <!-- events type section -->
 <div class="business-structure-container">
-    <h5>HOW PRIMETIME OPERATES</h5>
-    <h4>OUR BUSINESS STRUCTURE</h4>
-    <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p>
+    <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
+    <h4>BUSINESS STRUCTURE</h4>
+    <!-- <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p> -->
     <div class="business-structure-cards">
         <div class="business-card">
             <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
@@ -114,42 +114,39 @@
 
 <!-- past events page-->
 <section id="past-events">
-  <div class="business-structure-container">
-    <h5>THINKING OUT OF THE BOX</h5>
-    <h4>SOME EXPERIENCES WE HAVE CREATED</h4>
-
-      <div class="col-container">
-        <div class="past-events-cards">
-
+    <div class="event-structure-container">
+        <!-- <h5>THINKING OUT OF THE BOX</h5> -->
+        <h4>PAST EXPERIENCES</h4>
+        <div class="event-structure-cards">
             <% @past_events.each do |p| %>
-
-              <div class="event-card">
-                <% p.photos.each do |photo| %>
-                <%= cl_image_tag photo.key, style:"width:100%" %>
-                <% end %>
-                <div class="business-info">
-                  <h5 class="my-pipeline-title">
-                    <%= link_to p.title, p if current_user%>
-                  </h5>
-                  <p class="my-pipeline-text">               
-                    <%= p.description %> <%= p.location %> From <%= p.date_start %> to <%= p.date_end %>
-                    <% if !p.photos.empty? %>
-                    <% end %>
-                  </p>
+                <div class="event-structure-card">
+                    <div class="slideshow-container">
+                        <% p.photos.each do |photo| %>
+                        <div class="mySlides">
+                            <%= cl_image_tag photo.key, style:"width:100%" %>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <% end %>
+                    </div>
+                    <div class="business-info">
+                        <h5 class="my-pipeline-title">
+                            <%= link_to p.title, p if current_user%>
+                        </h5>
+                        <p class="my-pipeline-text">
+                            <%= p.description %>
+                            <%= p.location %> From
+                            <%= p.date_start %> to
+                            <%= p.date_end %>
+                            <% if !p.photos.empty? %>
+                            <% end %>
+                        </p>
+                    </div>
                 </div>
-              </div>
-
-            <% end %>  
-
+            <% end %>
         </div>
-      </div>
-
-  </div>
+    </div>
 </section>
-
-
-
-
 
 <!-- CAROUSEL TEST -->
 <!-- <div class="past-events-cards">
@@ -183,11 +180,12 @@
         </div>
     </div>
 </div> -->
+
 <!-- meet the team -->
 <div class="the-team">
-    <h5>PRIMETIME’S TEAM</h5>
-    <h4>ALWAYS AT YOUR DISPOSAL</h4>
-    <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>
+    <!-- <h5>PRIMETIME’S TEAM</h5> -->
+    <h4>TEAM</h4>
+    <!-- <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p> -->
     <div class="team-row">
         <div class="full-team-cards">
             <div class="full-team-card">
@@ -198,7 +196,6 @@
                                 <div class="team-card">
                                     <h4>JAY LEE</h4>
                                     <h6 class="title">FOUNDER AND PRESIDENT</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
                                     <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -206,7 +203,7 @@
                                 <div class="team-card">
                                     <h4>SAMUEL SONG</h4>
                                     <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-                                        <p class="pipeline-text"><small class="text-muted">+ 33 6 24 15 13 06</small></p>
+
                                         <p class="pipeline-text"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -214,7 +211,6 @@
                                 <div class="team-card">
                                     <h4>SEOYO LEE</h4>
                                     <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 99 46 74 33</small></p>
                                     <p class="pipeline-text"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -222,7 +218,6 @@
                                 <div class="team-card">
                                     <h4>SEBASTIEN HAN</h4>
                                     <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 7 60 00 19 94</small></p>
                                     <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -232,7 +227,6 @@
                                 <div class="team-card">
                                     <h4>EUN KIM</h4>
                                     <h6 class="title">SALES AND MARKETING MANAGER</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 78 52 52 21</small></p>
                                     <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -240,7 +234,6 @@
                                 <div class="team-card">
                                     <h4>HAYAN KIM</h4>
                                     <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 25 64 53 01</small></p>
                                     <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -248,7 +241,6 @@
                                 <div class="team-card">
                                     <h4>SWAN KIM</h4>
                                     <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 16 84 10 72</small></p>
                                     <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -256,7 +248,6 @@
                                 <div class="team-card">
                                     <h4>KUNWOO KOO</h4>
                                     <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 89 96 38 32</small></p>
                                     <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
                                 </div>
                             </div>
@@ -279,7 +270,7 @@
 <section id="contact">
 <div class="contact-container">
     <div class="contact-us">
-        <h3>CONTACT US</h3>
+        <h4>CONTACT</h4>
     </div>
     <div class="row">
         <div class="contact-column">
