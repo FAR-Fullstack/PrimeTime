@@ -5,8 +5,15 @@
   <% @past_events.each do |p| %>
     <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
       </li>
+      <% if !p.photos.empty? %>
+
+      <% p.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+  <% end %>
   <% end %>
   </ul>
-
+  <%= link_to "Back to home", :root %>
   <%= link_to 'Add a past event', "past_events/new", class: "btn btn-primary" %>
 </div>
+
