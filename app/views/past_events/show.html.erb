@@ -5,16 +5,17 @@
     <li><%= @past_event.date_start %></li>
     <li><%= @past_event.date_end %></li>
     <li><%= @past_event.location %></li>
-    <% if !@past_event.pictures.nil? %>
+    <% if !@past_event.photos.empty? %>
       <li>
         <ul>
-        <% @past_event.pictures.each do |picture| %>
-          <li><%= picture.link %></li>
+        <% @past_event.photos.each do |photo| %>
+          <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
         <% end %>
         </ul>
       </li>
       <% end %>
 </ul>
+<%= link_to "Back to past events", past_events_path %>
 <p class="text-center" id="edit"><%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_past_event_path(@past_event) %></p>
 <p class="text-center" id="trash"><%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, past_event_path(@past_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
 </div>

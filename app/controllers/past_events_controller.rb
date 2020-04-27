@@ -13,7 +13,9 @@ class PastEventsController < ApplicationController
 
   def create
     @past_event = PastEvent.new(past_event_params)
-    @past_event.pictures.build
+    # past_event_params[:photos].each do |photo|
+    #     @past_event.photos.attach(photo)
+    # end
     if @past_event.save
       redirect_to past_events_path, notice: 'successfully created.'
     else
@@ -40,7 +42,7 @@ class PastEventsController < ApplicationController
   private
 
   def past_event_params
-    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id)
+    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id, photos: [])
   end
 
 end
