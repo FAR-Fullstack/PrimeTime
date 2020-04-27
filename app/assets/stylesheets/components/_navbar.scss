@@ -1,9 +1,9 @@
 #navbar {
   background-color: #DADADA;
-  position: fixed;
-  top: 0;
+  // position: fixed;
+  // top: 50vh;
   width: 100%;
-  display: block;
+  // display: block;
   transition: top 0.3s;
   z-index: 99;
 }
@@ -16,6 +16,7 @@
   padding: 15px;
   text-decoration: none;
   font-size: 17px;
+  background-color: #B8BAC8;
 }
 
 #navbar a:hover {

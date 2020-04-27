@@ -1,10 +1,13 @@
 <div class="wrapper">
+  <section id="home">
+    <div class="banner " style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
 
   <!-- navbar -->
   <div id="navbar">
     <a href="#home">Home</a>
-    <a href="#events">Our Events</a>
-    <a href="#contact">Contact Us</a>
+    <a href="#pipeline">Events</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
     <% if current_user %>
     <%= link_to "My future events", future_events_path %>
     <%= link_to "Add future events", new_future_event_path %>
@@ -13,25 +16,22 @@
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
   </div>
-
+</section>
     <!-- banner with logo -->
     <div class="banner-and-intro">
-        <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
         <!-- intro section -->
         <div class="intro">
             <h2>OUR VISION</h2>
             <p>The Korean culture has been omnipresent around the world through its music, food and TV series for years. This wave, best known as Hallyu, piqued and is still piquing people’s attention and we, at PRIMETIME, believe that the wave can be further spread through lot of other different facets of the emerging country.</p>
             <p>Korea is the reference of innovation and technology, yet still unfamiliar or unknown to a lot of people. PRIMETIME aims to become the beacon spreading the Korean culture around the globe and let the world discover Hallyu in different ways.</p>
+            <h2>ABOUT</h2>
+            <p>Aiming at promoting intercultural and commercial exchanges between France and Korea, Primetime brings together a young and dynamic team oriented towards the collective and open to the world.</p>
+            <p>With a large network of economic and cultural players, our role is ultimately to respond to a real need for adaptation in the context of globalization, and to offer a new perspective based on the development of concrete actions with multiple objectives. We thus generate conversations and relationships feeding the spaces of exchanges, media and digital visibilities.</p>
         </div>
     </div>
-    <section id="about">
-      <h2>ABOUT</h2>
-      <p>Aiming at promoting intercultural and commercial exchanges between France and Korea, Primetime brings together a young and dynamic team oriented towards the collective and open to the world.</p>
-      <p>With a large network of economic and cultural players, our role is ultimately to respond to a real need for adaptation in the context of globalization, and to offer a new perspective based on the development of concrete actions with multiple objectives. We thus generate conversations and relationships feeding the spaces of exchanges, media and digital visibilities.</p>
-    </section>
     <!-- pipeline events -->
     <div class="pipeline">
-
+    <section id="pipeline">
     <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
     <h4>2020 EVENTS ON THE PIPELINE</h4>
     <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
@@ -49,6 +49,7 @@
           </div>
           <% end %>
         </div>
+    </section>
     </div>
 
      <!-- see more button showing more events -->
@@ -172,6 +173,8 @@
 </div>
 <!-- meet the team -->
 <div class="the-team">
+  <section id="team">
+
     <h5>PRIMETIME’S TEAM</h5>
     <h4>ALWAYS AT YOUR DISPOSAL</h4>
     <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>
@@ -253,6 +256,7 @@
             </div>
         </div>
     </div>
+  </section>
 </div>
 <!-- contact us section -->
 <section id="contact">
@@ -302,31 +306,63 @@
     </div>
 </div>
 <script>
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-150px";
-    }
-    prevScrollpos = currentScrollPos;
+  // navbar
+
+  //Debounce function to avoid calling to many times the function
+  function debounce(func, wait = 50, immediate = true) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+// Get the navbar
+const navbar = document.getElementById("navbar");
+
+
+// checking
+
+function checkSlide(e) {
+  console.log(window.scrollY);
 }
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
+// add a listener on scrolling
+window.addEventListener('scroll', debounce(checkSlide));
+
+
+//   // Get the navbar
+// const navbar = document.getElementById("navbar");
+
+// // Get the offset position of the navbar
+// const sticky = navbar.offsetTop;
+
+// // Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
+// function myFunction() {
+//   if (window.pageYOffset  >= sticky) {
+//     navbar.classList.add("sticky")
+//   } else {
+//     navbar.classList.remove("sticky");
+//   }
+// }
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) {
+//         document.getElementById("navbar").style.top = "0";
+//     } else {
+//       document.getElementById("navbar").style.top = "-50px";
+//     }
+//     prevScrollpos = currentScrollPos;
+// }
+
 </script>
 <!-- end of wrapper -->
 </div>
