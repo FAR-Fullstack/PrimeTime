@@ -1,21 +1,33 @@
-<div class="container">
-  <h1><%= @past_event.title %></h1>
-  <ul>
-    <li><%= @past_event.description %></li>
-    <li><%= @past_event.date_start %></li>
-    <li><%= @past_event.date_end %></li>
-    <li><%= @past_event.location %></li>
-    <% if !@past_event.photos.empty? %>
-      <li>
-        <ul>
-        <% @past_event.photos.each do |photo| %>
-          <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
-        <% end %>
-        </ul>
-      </li>
+
+  <div id="navbar">
+    <% if current_user %>
+    <%= link_to 'Back to main page', root_path %>
+    <%= link_to "My past events", past_events_path %>
+    <%= link_to "Edit the event", edit_past_event_path(@past_event) %>
+    <%= link_to "delete the event", past_event_path(@past_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+
+<div class="past-event-container">
+
+  <div class="row"> 
+      <% @past_event.photos.each do |photo| %>
+    <div class="column">
+      <%= cl_image_tag photo.key, style:"width:100%" %>
+    </div>
       <% end %>
-</ul>
-<%= link_to "Back to past events", past_events_path %>
-<p class="text-center" id="edit"><%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_past_event_path(@past_event) %></p>
-<p class="text-center" id="trash"><%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, past_event_path(@past_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %></p>
+
+    <div class="past-event-info">
+      <h5><%= @past_event.title %></h5>
+      <p><%= @past_event.description %></p>
+      <p><%= @past_event.location %> from
+      <%= @past_event.date_start %> to
+      <%= @past_event.date_end %></p>
+       <% if !@past_event.photos.empty? %></p>
+       <% end %>
+    </div>
+
+  </div>
+
 </div>

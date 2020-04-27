@@ -1,9 +1,9 @@
 require "open-uri"
 
 puts "Destroying the db"
+Picture.destroy_all
 PastEvent.destroy_all
 FutureEvent.destroy_all
-Picture.destroy_all
 User.destroy_all
 
 puts "Creating user"

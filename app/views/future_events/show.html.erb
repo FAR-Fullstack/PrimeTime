@@ -1,3 +1,13 @@
+<div class="wrapper">
+  <div id="navbar">
+    <% if current_user %>
+    <%= link_to 'Back to main page', root_path %>
+    <%= link_to "Edit the event", edit_future_event_path(@future_event) %>
+    <%= link_to "delete the event", future_event_path(@future_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+
 <div class="my-pipeline">
     <div class="my-pipeline-row">
         <div class="my-pipeline-card">

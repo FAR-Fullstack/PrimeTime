@@ -111,33 +111,48 @@
         </div>
     </div>
 </div>
+
 <!-- past events page-->
 <section id="past-events">
-  <div class="past-events-section">
+  <div class="business-structure-container">
     <h5>THINKING OUT OF THE BOX</h5>
     <h4>SOME EXPERIENCES WE HAVE CREATED</h4>
+
       <div class="col-container">
         <div class="past-events-cards">
-            <% @past_events.each do |past_event| %>
+
+            <% @past_events.each do |p| %>
+
               <div class="event-card">
+                <% p.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, style:"width:100%" %>
+                <% end %>
                 <div class="business-info">
-                  <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
-                  <h5 class="pipeline-title"><%= link_to past_event.title.capitalize, past_event if current_user %></h5>
-                  <p><%= past_event.description.capitalize %></p>
-                  <p class="pipeline-text"><%= past_event.location %></p>
-                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start %> to <%= past_event.date_end %></small></p>
+                  <h5 class="my-pipeline-title">
+                    <%= link_to p.title, p if current_user%>
+                  </h5>
+                  <p class="my-pipeline-text">               
+                    <%= p.description %> <%= p.location %> From <%= p.date_start %> to <%= p.date_end %>
+                    <% if !p.photos.empty? %>
+                    <% end %>
+                  </p>
                 </div>
               </div>
-            <% end %>
+
+            <% end %>  
+
         </div>
       </div>
-    </div>
+
+  </div>
 </section>
 
 
 
+
+
 <!-- CAROUSEL TEST -->
-<div class="past-events-cards">
+<!-- <div class="past-events-cards">
     <div class="event-card">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -167,7 +182,7 @@
             <button class="button">Past Public Events</button>
         </div>
     </div>
-</div>
+</div> -->
 <!-- meet the team -->
 <div class="the-team">
     <h5>PRIMETIME’S TEAM</h5>
