@@ -1,22 +1,49 @@
 <div class="wrapper">
   <section id="home">
-    <div class="banner " style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
-
-  <!-- navbar -->
-  <div id="navbar">
-    <a href="#home">Home</a>
-    <a href="#pipeline">Events</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-    <% if current_user %>
-    <%= link_to "My future events", future_events_path %>
-    <%= link_to "Add future events", new_future_event_path %>
-    <%= link_to "My past events", past_events_path %>
-    <%= link_to "Add past events", new_past_event_path %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </div>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1448523183439-d2ac62aca997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;">
+</div>
+    <!-- navbar -->
 </section>
+
+
+
+<div class="navbar navbar-expand navbar-light d-flex navbar-lewagon">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#pipeline">Events</a>
+            </li>
+            <img class="navbar-brand" src="<%= asset_path('primetime_petit_logo.jpg')%>" />
+            <li class="nav-item active">
+                <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <% if current_user %>
+            <li class="nav-item active">
+                <%= link_to "My future events", future_events_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item active">
+                <%= link_to "Add future events", new_future_event_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item active">
+                <%= link_to "My past events", past_events_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item active">
+                <%= link_to "Add past events", new_past_event_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item active">
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            </li>
+            <% end %>
+          </ul>
+       </div>
+    </div>
+
     <!-- banner with logo -->
     <div class="banner-and-intro">
         <!-- intro section -->
@@ -330,7 +357,7 @@ const navbar = document.getElementById("navbar");
 // checking
 
 function checkSlide(e) {
-  console.log(window.scrollY);
+  console.log(navbar.InnerHeight);
 }
 
 

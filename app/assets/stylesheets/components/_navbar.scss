@@ -1,25 +1,11 @@
-#navbar {
-  background-color: #DADADA;
-  // position: fixed;
-  // top: 50vh;
-  width: 100%;
-  // display: block;
-  transition: top 0.3s;
-  z-index: 99;
+.navbar-lewagon {
+  justify-content: space-between !important;
+  background: grey;
+}
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
-  background-color: #B8BAC8;
-}
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: #CCB774;
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
