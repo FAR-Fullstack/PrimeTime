@@ -10,3 +10,61 @@
 
   <%= link_to 'Add a past event', "past_events/new", class: "btn btn-primary" %>
 </div>
+
+
+
+<!-- past events carousel test -->
+
+<h2 style="text-align:center">Slideshow Gallery</h2>
+<div class="carousel-container">
+
+	<% @past_events.each do |p| %>
+	<div class="container">
+	  
+	  <div class="mySlides">
+	  	<%= cl_image_tag picture.key, class: "items-image d-block" %>
+	    <%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>
+	  </div>  
+	    
+	  <a class="prev" onclick="plusSlides(-1)">❮</a>
+	  <a class="next" onclick="plusSlides(1)">❯</a>
+
+	</div>
+	<% end %>
+
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
