@@ -1,4 +1,4 @@
-<!-- For now, it is a list because we don't have the card component -->
+<!-- index future events -->
   <div id="navbar">
     <% if current_user %>
     <%= link_to 'Back to main page', root_path %>
@@ -11,9 +11,11 @@
     <div class="my-pipeline-row">
         <% @future_events.each do |f| %>
         <div class="my-pipeline-card">
-            <h5 class="my-pipeline-title">
-                <%= link_to f.title, f if current_user %>
-            </h5>
+            <div class="my-pipeline-title">
+                <h5>
+                    <%= link_to f.title, f if current_user %>
+                </h5>
+            </div>
             <p>
                 <%= f.description %>
             </p>
@@ -27,3 +29,4 @@
         <% end %>
     </div>
 </div>
+
