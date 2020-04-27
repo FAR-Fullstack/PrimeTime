@@ -8,17 +8,6 @@ img {vertical-align: middle;}
   // background-color:s #eee4e1;
 }
 
-.button a {
-  color: #f9f9f9;
-  text-decoration: none;
-}
-
-.button a:hover {
-  color: #CCB774;
-  // background-color: black;
-  background-color: #f2f2f2;
-}
-
 
 .event-structure-container h5 {
   text-align: center;
@@ -38,13 +27,13 @@ img {vertical-align: middle;}
 }
 
 .past-event-info.show h5 {
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
-.event-structure-container p {
+.past-event-info.show p {
   text-align: center;
   color: grey;
-  padding-top: 5px;
+  padding: 10px 20px;
 }
 
 .event-structure-cards {
@@ -178,5 +167,11 @@ img {vertical-align: middle;}
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .past-event-info.show h5 {
+    margin-top: 130px;
   }
 }
