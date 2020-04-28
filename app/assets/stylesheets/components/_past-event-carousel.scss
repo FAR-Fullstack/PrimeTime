@@ -36,6 +36,11 @@ img {vertical-align: middle;}
   padding: 10px 20px;
 }
 
+.past-event-info.show {
+  width: 100%;
+}
+
+
 .event-structure-cards {
   display: flex;
   flex-direction: row;
@@ -132,6 +137,7 @@ img {vertical-align: middle;}
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
+  justify-content: center;
   // padding: 0 4px;
 }
 

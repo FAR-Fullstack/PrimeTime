@@ -4,7 +4,9 @@
   <%= f.input :date_start %>
   <%= f.input :date_end %>
   <%= f.input :location %>
-  <%= f.input :category, :as => :check_boxes, :collection => ["Public Event", "Private Event"] %>
+  <%= f.input :category, :as => :check_boxes, :collection => [["Public Event", "Public Event"], ["Private Event", "Private Event"]] %>
+  <%# f.radio_button :category, "Public Event", params[:category] %>
+  <%# f.radio_button :category, "Private Event", params[:category] %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit%>
 <% end %>

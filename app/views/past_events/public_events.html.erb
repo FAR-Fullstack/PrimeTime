@@ -1,0 +1,85 @@
+<section id="past-events">
+    <div id="navbar">
+        <%= link_to 'Back to main page', root_path %>
+        <% if current_user %>
+        <%= link_to "Add past events", new_past_event_path %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% end %>
+    </div>
+
+    <div class="event-structure-container index">
+        <h4>PAST PUBLIC EVENTS</h4>
+
+        <div class="event-structure-cards">
+            <% @past_events.each do |p| %>
+            <div class="event-structure-card">
+              <div class="slideshow-container">
+                  <% p.photos.each do |photo| %>
+                  <div class="mySlides">
+                      <%= cl_image_tag photo.key, style:"width:100%" %>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  </div>
+                  <% end %>
+              </div>
+
+              <div class="business-info">
+                  <h5 class="my-pipeline-title">
+                      <%= link_to p.title, p if current_user%>
+                  </h5>
+                  <p class="my-pipeline-text">
+                      <%= p.description %>
+                      <%= p.location %> From
+                      <%= p.date_start %> to
+                      <%= p.date_end %>
+                      <% if !p.photos.empty? %>
+                      <% end %>
+                  </p>
+              </div>
+            </div>
+
+            <% end %>
+        </div>
+
+    </div>
+</section>
+     
+
+<script>
+
+// navbar
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-150px";
+    }
+    prevScrollpos = currentScrollPos;
+}
+
+// carousel
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  };
+  slides[slideIndex-1].style.display = "block";  
+};
+
+</script>
