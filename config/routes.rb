@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :past_events do
-    resources :pictures, only: [:new, :create, :index]
+    collection do 
+    	get "public_events"
+    	get "private_events"
+    end
   end
 
   resources :future_events

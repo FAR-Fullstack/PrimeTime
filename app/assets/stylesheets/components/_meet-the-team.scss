@@ -10,7 +10,7 @@
   height: auto;
   background-color: #F2EDEB;
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 70px;
 }
 
 .the-team h5 {
@@ -23,6 +23,7 @@
   text-align: center;
   color: black;
   padding-top: 5px;
+  padding-bottom: 25px;
 }
 
 .the-team p {
@@ -40,7 +41,7 @@
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 
 
@@ -49,7 +50,6 @@
   // margin-bottom: 16px;
   padding: 25px;
   width: 25vw;
-  // height: 250px;
 }
 
 @media screen and (max-width: 650px) {
@@ -62,14 +62,15 @@
 .team-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 25px;
+  // padding: 25px;
   background-color: white;
+  height: 200px;
 }
 
 .team-card h4 {
   text-align: center;
   color: #CCB774;
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
 .team-card h6 {
