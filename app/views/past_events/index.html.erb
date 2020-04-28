@@ -13,15 +13,15 @@
         <div class="event-structure-cards">
             <% @past_events.each do |p| %>
             <div class="event-structure-card">
-              <div class="slideshow-container">
+              <!-- <div class="slideshow-container"> -->
                   <% p.photos.each do |photo| %>
-                  <div class="mySlides">
+                  <!-- <div class="mySlides"> -->
                       <%= cl_image_tag photo.key, style:"width:100%" %>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  </div>
+                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                  <!-- </div> -->
                   <% end %>
-              </div>
+              <!-- </div> -->
 
               <div class="business-info">
                   <h5 class="my-pipeline-title">
