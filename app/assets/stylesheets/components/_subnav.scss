@@ -1,0 +1,38 @@
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #CCB774;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #DADADA;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  text-decoration: none;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}

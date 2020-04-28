@@ -2,46 +2,34 @@
   <section id="home">
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1448523183439-d2ac62aca997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;">
 </div>
-    <!-- navbar -->
 </section>
 
 
 
-<div class="navbar navbar-expand navbar-light d-flex navbar-lewagon">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+    <!-- navbar -->
+<div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+
                 <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item active">
+
                 <a class="nav-link" href="#pipeline">Events</a>
-            </li>
-            <img class="navbar-brand" src="<%= asset_path('primetime_petit_logo.jpg')%>" />
-            <li class="nav-item active">
-                <a class="nav-link" href="#team">Team</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#contact">Contact</a>
-            </li>
             <% if current_user %>
-            <li class="nav-item active">
-                <%= link_to "My future events", future_events_path, class:"nav-link" %>
-            </li>
-            <li class="nav-item active">
-                <%= link_to "Add future events", new_future_event_path, class:"nav-link" %>
-            </li>
-            <li class="nav-item active">
-                <%= link_to "My past events", past_events_path, class:"nav-link" %>
-            </li>
-            <li class="nav-item active">
-                <%= link_to "Add past events", new_past_event_path, class:"nav-link" %>
-            </li>
-            <li class="nav-item active">
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
-            </li>
+                <div class="subnav">
+                  <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+                    <div class="subnav-content">
+                <%= link_to "My future events", future_events_path, class:"subnavbtn" %>
+                <%= link_to "Add future events", new_future_event_path, class:"subnavbtn" %>
+                <%= link_to "My past events", past_events_path, class:"subnavbtn" %>
+                <%= link_to "Add past events", new_past_event_path, class:"subnavbtn" %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"subnavbtn" %>
+                    </div>
+                  </div>
+            <% else %>
+                  <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
             <% end %>
-          </ul>
-       </div>
+                <a class="nav-link" href="#team">Team</a>
+                <a class="nav-link" href="#contact">Contact</a>
+          <!-- </ul> -->
+       <!-- </div> -->
     </div>
 
     <!-- banner with logo -->
