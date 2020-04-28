@@ -27,11 +27,12 @@
                   <h5 class="my-pipeline-title">
                       <%= link_to p.title, p if current_user%>
                   </h5>
-                  <p class="my-pipeline-text">
-                      <%= p.description %>
-                      <%= p.location %> From
+                  <p class="my-pipeline-text">                     
+                      <p><%= p.description %></p>
+                      <p><%= p.location %>
+                       | From
                       <%= p.date_start %> to
-                      <%= p.date_end %>
+                      <%= p.date_end %></p>                       
                       <% if !p.photos.empty? %>
                       <% end %>
                   </p>
