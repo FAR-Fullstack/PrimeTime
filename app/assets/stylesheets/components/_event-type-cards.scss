@@ -38,7 +38,7 @@
 
 .business-info {
   position: relative;
-  height: 200px;
+  height: 230px;
 }
 
 
@@ -51,7 +51,7 @@
 }
 
 .business-card {
-  width: 30vw;
+  // width: 30vw;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -62,16 +62,16 @@
 
 @media screen and (min-width: 600px) {
   div.business-card {
-    display: flex;
+    // display: flex;
     // height: auto;
-    // width: 100vw !important;
-    flex-direction: column;
-    // flex-wrap: wrap;
-    align-items: center;
+    width: 100vw;
+    // flex-direction: column;
+    // // flex-wrap: wrap;
+    // align-items: center;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   div.business-card {
     display: flex;
     height: auto;
@@ -86,7 +86,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   div.business-card {
     display: flex;
     height: auto;
