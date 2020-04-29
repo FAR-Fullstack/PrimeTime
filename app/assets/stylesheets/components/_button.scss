@@ -12,6 +12,18 @@
 
 .button:hover {
   color: #CCB774;
-  background-color: black;
+  // background-color: black;
+  background-color: #f2f2f2;
+}
+
+
+.button a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.button a:hover {
+  color: #CCB774;
+  // background-color: black;
   background-color: #f2f2f2;
 }

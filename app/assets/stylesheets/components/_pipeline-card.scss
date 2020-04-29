@@ -1,7 +1,7 @@
 .pipeline {
 	background-color: #FBFBF2;
 	padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 70px;
   height: auto;
 }
 
@@ -14,7 +14,7 @@
 
 .pipeline-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 33.3vh;
+  width: 44vw;
   margin: 20px;
   text-align: center;
   background-color: white;
@@ -28,6 +28,12 @@
   position: relative;
 }
 
+.my-pipeline-row .index {
+  display: flex;
+  flex-direction: row;
+
+}
+
 .pipeline h5 {
   text-align: center;
   color: #CCB774;
@@ -38,6 +44,7 @@
   text-align: center;
   color: black;
   padding-top: 5px;
+  padding-bottom: 50px;
 }
 
 .pipeline p {

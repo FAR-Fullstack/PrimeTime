@@ -16,6 +16,7 @@ class PastEventsController < ApplicationController
     # past_event_params[:photos].each do |photo|
     #     @past_event.photos.attach(photo)
     # end
+    @past_event.category = past_event_params[:category][1]
     if @past_event.save
       redirect_to past_events_path, notice: 'successfully created.'
     else
@@ -39,10 +40,18 @@ class PastEventsController < ApplicationController
     redirect_to past_events_path, notice: 'successfully delete'
   end
 
+  def public_events
+    @past_events = PastEvent.where(category: "Public Event")
+  end
+
+  def private_events
+    @past_events = PastEvent.where(category: "Private Event")
+  end
+
   private
 
   def past_event_params
-    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id, photos: [])
+    params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id, category: [], photos: [])
   end
 
 end

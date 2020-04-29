@@ -1,38 +1,37 @@
 <section id="past-events">
     <div id="navbar">
-        <% if current_user %>
         <%= link_to 'Back to main page', root_path %>
+        <% if current_user %>
         <%= link_to "Add past events", new_past_event_path %>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
         <% end %>
     </div>
 
     <div class="event-structure-container index">
-        <h4>PAST EXPERIENCES</h4>
+        <h4>PAST PRIVATE EVENTS</h4>
 
         <div class="event-structure-cards">
             <% @past_events.each do |p| %>
             <div class="event-structure-card">
-              <!-- <div class="slideshow-container"> -->
+              <div class="slideshow-container">
                   <% p.photos.each do |photo| %>
-                  <!-- <div class="mySlides"> -->
+                  <div class="mySlides">
                       <%= cl_image_tag photo.key, style:"width:100%" %>
-                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                  <!-- </div> -->
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  </div>
                   <% end %>
-              <!-- </div> -->
+              </div>
 
               <div class="business-info">
                   <h5 class="my-pipeline-title">
                       <%= link_to p.title, p if current_user%>
                   </h5>
-                  <p class="my-pipeline-text">                     
-                      <p><%= p.description %></p>
-                      <p><%= p.location %>
-                       | From
+                  <p class="my-pipeline-text">
+                      <%= p.description %>
+                      <%= p.location %> From
                       <%= p.date_start %> to
-                      <%= p.date_end %></p>                       
+                      <%= p.date_end %>
                       <% if !p.photos.empty? %>
                       <% end %>
                   </p>
