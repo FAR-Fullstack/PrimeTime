@@ -90,10 +90,23 @@
   div.business-card {
     display: flex;
     height: auto;
-    width: 40vw;
+    width: 30vw !important;
     flex-direction: column;
     // flex-wrap: wrap;
     align-items: center;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+  div.business-info p {
+    padding: 5px;
+  }
+  div.button-container .button {
+    position:relative;
+    width: auto;
+    font-size: 16px;
+    bottom: 0 !important;
+    left: 5%;
+    right: 5%;
   }
 }
 
