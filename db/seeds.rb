@@ -7,7 +7,7 @@ FutureEvent.destroy_all
 User.destroy_all
 
 puts "Creating user"
-User.create({email: "god@godmode.com", password: "password"})
+User.create({email: "jaeyo.lee@primetimefr.com", password: "adminpassword"}) 
 
 puts "Creating past events"
 file1 = URI.open("https://img.theculturetrip.com/768x432/wp-content/uploads/2018/06/10755629065_9d01ec2793_o.png")
