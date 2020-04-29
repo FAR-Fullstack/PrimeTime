@@ -1,12 +1,25 @@
 <section id="past-events">
-    <div id="navbar">
-        <%= link_to 'Back to main page', root_path %>
-        <%= link_to "All past events", past_events_path %>
+
+    <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <div class="logo-left">
+          <a href="/">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+          </a>
+        </div>
+        <%= link_to "All past events", past_events_path, class:"nav-link" %>
         <% if current_user %>
-        <%= link_to "Add past events", new_past_event_path %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <!-- <div class="subnav"> -->
+            <!-- <div class="subnav-content"> -->
+                <%= link_to "Add past events", new_past_event_path, class:"nav-link"%>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <!-- </div> -->
+        <!-- </div> -->
+        
         <% end %>
-    </div>
+
+        <!-- </ul> -->
+        <!-- </div> -->
+  </div>
 
     <div class="event-structure-container index">
         <h4>PAST PUBLIC EVENTS</h4>
