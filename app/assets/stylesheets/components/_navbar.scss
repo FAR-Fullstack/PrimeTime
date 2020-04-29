@@ -13,6 +13,25 @@
     padding: 0 16px;
 }
 
+.navbar {
+  position: relative;
+}
+
+.logo-left {
+  position: absolute;
+  left: 0;
+  padding-left: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  div.logo-left {
+  position: absolute;
+  left: 0;
+  padding-left: 0px;
+  };
+}
+
+
 .navbar-lewagon a {
     color: #CCB774;
     text-decoration: none;
@@ -21,17 +40,28 @@
     color: #CCB774;
 }
 
+
+
 @media screen and (max-width: 600px) {
   div.navbar-lewagon {
   width: 100%;
   };
 }
+
 @media screen and (max-width: 600px) {
   a.nav-link {
-    font-size: 12px;
-    padding: 8px 4px;
+    font-size: 8px;
+    padding: 12px 5px;
   };
 }
+
+@media screen and (min-width: 800px) {
+  a.nav-link {
+    font-size: 16px;
+    padding: 12px 20px;
+  };
+}
+
 @media screen and (max-width: 600px) {
   img#logo {
     height: 50px;

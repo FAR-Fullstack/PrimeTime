@@ -10,15 +10,22 @@
 
 @media screen and (min-width: 1024px) {
   div.future {
-  height: 350px;
+  width: 100vh
   }
 }
 
 @media screen and (max-width: 600px) {
   div.future {
-  height: 300px;
+  width: 100vh
   }
 }
+
+// @media screen and (min-width: 601px) {
+//   div.future {
+//   height: 550px;
+//   }
+// }
+
 
 @media screen and (min-width: 768px) {
   div.pipeline-card {
