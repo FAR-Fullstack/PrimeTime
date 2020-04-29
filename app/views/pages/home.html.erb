@@ -5,8 +5,8 @@
     </section>
     <!-- navbar -->
     <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#pipeline">Events</a>
+        <a class="nav-link" href="#Structure">Structure</a>
+        <a class="nav-link" href="#past-events">Events</a>
         <% if current_user %>
         <div class="subnav">
             <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
@@ -87,6 +87,7 @@
 </div>
 
 <!-- events type section -->
+<section id="Structure">
 <div class="business-structure-container">
     <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
     <h4>BUSINESS STRUCTURE</h4>
@@ -124,6 +125,7 @@
         </div>
     </div>
 </div>
+</section>
     <!-- past events page-->
     <section id="past-events">
         <div class="event-structure-container">
@@ -195,6 +197,7 @@
     </div>
 </div> -->
     <!-- meet the team -->
+    <section id="team">
     <div class="the-team">
         <!-- <h5>PRIMETIME’S TEAM</h5> -->
         <h4>TEAM</h4>
@@ -278,6 +281,7 @@
             </div>
         </div>
     </div>
+    </section>
     <!-- contact us section -->
     <section id="contact">
         <div class="contact-container">
@@ -319,7 +323,8 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="footer-copyright">
-        Website made with <i class="fas fa-heart"></i> by FAR
+        Website made with <i class="fas fa-heart"></i> by <a href="https://github.com/FAR-Fullstack" target="_blank">FAR</a>
+
     </div>
     <div>
         <%= link_to "Admin corner", new_user_session_path %>
