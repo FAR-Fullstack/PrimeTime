@@ -6,9 +6,9 @@
     <a href="#events">Our Events</a>
     <a href="#contact">Contact Us</a>
     <% if current_user %>
-    <%= link_to "My future events", future_events_path %>
+    <%= link_to "All future events", future_events_path %>
     <%= link_to "Add future events", new_future_event_path %>
-    <%= link_to "My past events", past_events_path %>
+    <%= link_to "All past events", past_events_path %>
     <%= link_to "Add past events", new_past_event_path %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
@@ -88,7 +88,7 @@
                 <h5>PRIVATE EVENTS</h5>
                 <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
                 <div class="button-container">
-                <button class="button"><%= link_to "Past Private Events", private_events_past_events_path %></button> 
+                <button class="button"><%= link_to "Private Events", private_events_past_events_path %></button> 
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <h5>PUBLIC EVENTS</h5>
                 <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
                 <div class="button-container">
-                <button class="button"><%= link_to "Past Public Events", public_events_past_events_path %></button> 
+                <button class="button"><%= link_to "Public Events", public_events_past_events_path %></button> 
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 <h5>PRODUCTION</h5>
                 <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
                 <div class="button-container">
-                <button class="button">Past Productions</button>
+                <button class="button">Productions</button>
                 </div>
             </div>
         </div>
@@ -124,13 +124,13 @@
             <% @past_events.each do |p| %>
                 <div class="event-structure-card">
                     <!-- <div class="slideshow-container"> -->
-                        <% p.photos.each do |photo| %>
-                        <div class="mySlides">
-                            <%= cl_image_tag photo.key, style:"width:100%" %>
+                        <%# p.photos.each do |photo| %>
+                        <!-- <div class="mySlides"> -->
+                            <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
                             <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                        </div>
-                        <% end %>
+                        <!-- </div> -->
+                        <%# end %>
                     <!-- </div> -->
                     <div class="business-info">
                         <h5 class="my-pipeline-title">
@@ -144,6 +144,9 @@
                             <% if !p.photos.empty? %>
                             <% end %>
                         </p>
+                        <div class="button-container">
+                            <button class="button"><%= link_to "See more", past_event_path(p) %></button> 
+                        </div>
                     </div>
                 </div>
             <% end %>
@@ -257,13 +260,13 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+               <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Next</span> -->
                 </a>
             </div>
         </div>
