@@ -1,22 +1,33 @@
 <div class="wrapper">
-
-  <!-- navbar -->
-  <div id="navbar">
-    <a href="#home">Home</a>
-    <a href="#events">Our Events</a>
-    <a href="#contact">Contact Us</a>
-    <% if current_user %>
-    <%= link_to "All future events", future_events_path %>
-    <%= link_to "Add future events", new_future_event_path %>
-    <%= link_to "All past events", past_events_path %>
-    <%= link_to "Add past events", new_past_event_path %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </div>
-
+    <section id="home">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1448523183439-d2ac62aca997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;">
+        </div>
+    </section>
+    <!-- navbar -->
+    <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#pipeline">Events</a>
+        <% if current_user %>
+        <div class="subnav">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+            <div class="subnav-content">
+                <%= link_to "My future events", future_events_path, class:"subnavbtn" %>
+                <%= link_to "Add future events", new_future_event_path, class:"subnavbtn" %>
+                <%= link_to "My past events", past_events_path, class:"subnavbtn" %>
+                <%= link_to "Add past events", new_past_event_path, class:"subnavbtn" %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"subnavbtn" %>
+            </div>
+        </div>
+        <% else %>
+        <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+        <% end %>
+        <a class="nav-link" href="#team">Team</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <!-- </ul> -->
+        <!-- </div> -->
+    </div>
     <!-- banner with logo -->
     <div class="banner-and-intro">
-        <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
         <!-- intro section -->
         <div class="intro">
             <h2>OUR VISION</h2>
@@ -26,56 +37,55 @@
     </div>
     <!-- pipeline events -->
     <div class="pipeline">
-      
-    <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
-    <h4>WHAT IS COMING</h4>
-    <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
-      <div class="col-container">
-        <div class="pipeline-row">
-          <% @future_events.each do |future_event| %>
-          <div class="pipeline-card">
-            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>
-              <p><%= future_event.description.capitalize %></p>
-              <p class="pipeline-text"><%= future_event.location %></p>
-              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
-<!--             <div class="button-separation">
+        <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
+        <h4>WHAT IS COMING</h4>
+        <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
+        <div class="col-container">
+            <div class="pipeline-row">
+                <% @future_events.each do |future_event| %>
+                <div class="pipeline-card">
+                    <h5 class="pipeline-title">
+                        <%= future_event.title.capitalize %>
+                    </h5>
+                    <p>
+                        <%= future_event.description.capitalize %>
+                    </p>
+                    <p class="pipeline-text">
+                        <%= future_event.location %>
+                    </p>
+                    <p class="pipeline-text"><small class="text-muted">
+                            <%= future_event.date_start %> to
+                            <%= future_event.date_end %></small></p>
+                    <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->
-          </div>
-          <% end %>
+                </div>
+                <% end %>
+            </div>
         </div>
-    </div>
-
-     <!-- see more button showing more events -->
-      <!-- <div>
-
+        <!-- see more button showing more events -->
+        <!-- <div>
         <input type="checkbox" class="read-more-state" id="post-2" />
-
         <ul class="read-more-wrap">
           <div class="pipeline-row">
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">START-UPS B2B MEET-UPS AND SEMINARS</h5>
                   <p class="pipeline-text"><small class="text-muted">October 2020</small></p>
             </div>
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">GUEST SPEAKERS CONFERENCES</h5>
                   <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
             </div>
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">KOREAN CHRISTMAS MARKET</h5>
                   <p class="pipeline-text"><small class="text-muted">December 2020</small></p>
             </div>
-
           </div>
         </ul>
-
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
 </div>
-  
+
 <!-- events type section -->
 <div class="business-structure-container">
     <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
@@ -88,7 +98,7 @@
                 <h5>PRIVATE EVENTS</h5>
                 <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
                 <div class="button-container">
-                <button class="button"><%= link_to "Private Events", private_events_past_events_path %></button> 
+                <button class="button"><%= link_to "Private Events", private_events_past_events_path %></button>
                 </div>
             </div>
         </div>
@@ -98,7 +108,7 @@
                 <h5>PUBLIC EVENTS</h5>
                 <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
                 <div class="button-container">
-                <button class="button"><%= link_to "Public Events", public_events_past_events_path %></button> 
+                <button class="button"><%= link_to "Public Events", public_events_past_events_path %></button>
                 </div>
             </div>
         </div>
@@ -113,15 +123,13 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- past events page-->
-<section id="past-events">
-    <div class="event-structure-container">
-        <!-- <h5>THINKING OUT OF THE BOX</h5> -->
-        <h4>PAST EXPERIENCES</h4>
-        <div class="event-structure-cards">
-            <% @past_events.each do |p| %>
+    <!-- past events page-->
+    <section id="past-events">
+        <div class="event-structure-container">
+            <!-- <h5>THINKING OUT OF THE BOX</h5> -->
+            <h4>PAST EXPERIENCES</h4>
+            <div class="event-structure-cards">
+                <% @past_events.each do |p| %>
                 <div class="event-structure-card">
                     <!-- <div class="slideshow-container"> -->
                         <%# p.photos.each do |photo| %>
@@ -145,17 +153,16 @@
                             <% end %>
                         </p>
                         <div class="button-container">
-                            <button class="button"><%= link_to "See more", past_event_path(p) %></button> 
+                            <button class="button"><%= link_to "See more", past_event_path(p) %></button>
                         </div>
                     </div>
                 </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- CAROUSEL TEST -->
-<!-- <div class="past-events-cards">
+    </section>
+    <!-- CAROUSEL TEST -->
+    <!-- <div class="past-events-cards">
     <div class="event-card">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -186,75 +193,74 @@
         </div>
     </div>
 </div> -->
-
-<!-- meet the team -->
-<div class="the-team">
-    <!-- <h5>PRIMETIME’S TEAM</h5> -->
-    <h4>TEAM</h4>
-    <!-- <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p> -->
-    <div class="team-row">
-        <div class="full-team-cards">
-            <div class="full-team-card">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>JAY LEE</h4>
-                                    <h6 class="title">FOUNDER AND PRESIDENT</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+    <!-- meet the team -->
+    <div class="the-team">
+        <!-- <h5>PRIMETIME’S TEAM</h5> -->
+        <h4>TEAM</h4>
+        <!-- <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p> -->
+        <div class="team-row">
+            <div class="full-team-cards">
+                <div class="full-team-card">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>JAY LEE</h4>
+                                        <h6 class="title">FOUNDER AND PRESIDENT</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SAMUEL SONG</h4>
+                                        <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+                                            <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SEOYO LEE</h4>
+                                        <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SEBASTIEN HAN</h4>
+                                        <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SAMUEL SONG</h4>
-                                    <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-
-                                        <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                            <div class="carousel-item">
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>EUN KIM</h4>
+                                        <h6 class="title">SALES AND MARKETING MANAGER</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SEOYO LEE</h4>
-                                    <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>HAYAN KIM</h4>
+                                        <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SEBASTIEN HAN</h4>
-                                    <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SWAN KIM</h4>
+                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>EUN KIM</h4>
-                                    <h6 class="title">SALES AND MARKETING MANAGER</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>HAYAN KIM</h4>
-                                    <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SWAN KIM</h4>
-                                    <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>KUNWOO KOO</h4>
-                                    <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>KUNWOO KOO</h4>
+                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -271,36 +277,35 @@
             </div>
         </div>
     </div>
-</div>
-<!-- contact us section -->
-<section id="contact">
-<div class="contact-container">
-    <div class="contact-us">
-        <h4>CONTACT</h4>
-    </div>
-    <div class="row">
-        <div class="contact-column">
-            <div class="banner responsive logo" style="background-image: url(<%= asset_path('logo-transparent.png')%>);"></div>
+    <!-- contact us section -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-us">
+                <h4>CONTACT</h4>
+            </div>
+            <div class="row">
+                <div class="contact-column">
+                    <div class="banner responsive logo" style="background-image: url(<%= asset_path('logo-transparent.png')%>);"></div>
+                </div>
+                <div class="contact-column">
+                    <form action="/action_page.php">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="australia">France</option>
+                            <option value="canada">South Korea</option>
+                            <option value="usa">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                        <button class="button">Submit</button>
+                </div>
+                </form>
+            </div>
         </div>
-        <div class="contact-column">
-            <form action="/action_page.php">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="australia">France</option>
-                    <option value="canada">South Korea</option>
-                    <option value="usa">Other</option>
-                </select>
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-                <button class="button">Submit</button>
-        </div>
-        </form>
-    </div>
-</div>
 </div>
 </section>
 <!-- footer -->
@@ -326,7 +331,7 @@ window.onscroll = function() {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-150px";
+        document.getElementById("navbar").style.top = "-150px";
     }
     prevScrollpos = currentScrollPos;
 }

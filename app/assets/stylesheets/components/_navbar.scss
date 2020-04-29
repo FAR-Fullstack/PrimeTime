@@ -1,24 +1,40 @@
-#navbar {
-  background-color: #DADADA;
-  position: fixed;
-  top: 0;
+.navbar-lewagon {
+  background: black;
+  display: flex;
+}
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+#logo {
+  height: 60px;
+  width: auto;
+    margin: 0 0 0 0;
+    padding: 0 16px;
+}
+
+.navbar-lewagon a {
+    color: #CCB774;
+    text-decoration: none;
+}
+.navbar-lewagon a:hover {
+    color: #CCB774;
+}
+
+@media screen and (max-width: 600px) {
+  div.navbar-lewagon {
   width: 100%;
-  display: block;
-  transition: top 0.3s;
-  z-index: 99;
+  };
 }
-
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
+@media screen and (max-width: 600px) {
+  a.nav-link {
+    font-size: 12px;
+    padding: 8px 4px;
+  };
 }
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: #CCB774;
+@media screen and (max-width: 600px) {
+  img#logo {
+    height: 50px;
+    width: auto;
+  }
 }
