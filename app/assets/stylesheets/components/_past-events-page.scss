@@ -57,6 +57,29 @@
 //   }
 // }
 
+@media screen and (min-width: 768px) {
+  div.event-structure-card {
+    display: flex;
+    height: auto;
+    width: 44vw !important;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.event-structure-card {
+    display: flex;
+    height: auto;
+    width: 40vw;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   div.past-events-section h5 {
     font-size: 24px;

@@ -1,6 +1,7 @@
 <section id="past-events">
     <div id="navbar">
         <%= link_to 'Back to main page', root_path %>
+        <%= link_to "All past events", past_events_path %>
         <% if current_user %>
         <%= link_to "Add past events", new_past_event_path %>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -13,19 +14,19 @@
         <div class="event-structure-cards">
             <% @past_events.each do |p| %>
             <div class="event-structure-card">
-              <div class="slideshow-container">
-                  <% p.photos.each do |photo| %>
-                  <div class="mySlides">
-                      <%= cl_image_tag photo.key, style:"width:100%" %>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  </div>
-                  <% end %>
-              </div>
+              <!-- <div class="slideshow-container"> -->
+                      <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
+                  <%# p.photos.each do |photo| %>
+                  <!-- <div class="mySlides"> -->
+                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+                  <!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                  <!-- </div> -->
+                  <%# end %>
+              <!-- </div> -->
 
               <div class="business-info">
                   <h5 class="my-pipeline-title">
-                      <%= link_to p.title, p if current_user%>
+                      <%= link_to p.title, past_event_path(p)%>
                   </h5>
                   <p class="my-pipeline-text">
                       <%= p.description %>

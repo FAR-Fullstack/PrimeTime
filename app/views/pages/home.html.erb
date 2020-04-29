@@ -84,43 +84,41 @@
         </ul>
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
-    </div>
-    <!-- events type section -->
-    <div class="business-structure-container">
-        <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
-        <h4>BUSINESS STRUCTURE</h4>
-        <!-- <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p> -->
-        <div class="business-structure-cards">
-            <div class="business-card">
-                <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
-                <div class="business-info">
-                    <h5>PRIVATE EVENTS</h5>
-                    <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
-                    <div class="button-container">
-                        <button class="button">
-                            <%= link_to "Private Events", private_events_past_events_path %></button>
-                    </div>
+</div>
+
+<!-- events type section -->
+<div class="business-structure-container">
+    <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
+    <h4>BUSINESS STRUCTURE</h4>
+    <!-- <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p> -->
+    <div class="business-structure-cards">
+        <div class="business-card">
+            <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
+            <div class="business-info">
+                <h5>PRIVATE EVENTS</h5>
+                <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
+                <div class="button-container">
+                <button class="button"><%= link_to "Private Events", private_events_past_events_path %></button>
                 </div>
             </div>
-            <div class="business-card">
-                <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-                <div class="business-info">
-                    <h5>PUBLIC EVENTS</h5>
-                    <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
-                    <div class="button-container">
-                        <button class="button">
-                            <%= link_to "Public Events", public_events_past_events_path %></button>
-                    </div>
+        </div>
+        <div class="business-card">
+            <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+            <div class="business-info">
+                <h5>PUBLIC EVENTS</h5>
+                <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
+                <div class="button-container">
+                <button class="button"><%= link_to "Public Events", public_events_past_events_path %></button>
                 </div>
             </div>
-            <div class="business-card">
-                <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-                <div class="business-info">
-                    <h5>PRODUCTION</h5>
-                    <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
-                    <div class="button-container">
-                        <button class="button">Productions</button>
-                    </div>
+        </div>
+        <div class="business-card">
+            <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+            <div class="business-info">
+                <h5>PRODUCTION</h5>
+                <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
+                <div class="button-container">
+                <button class="button">Productions</button>
                 </div>
             </div>
         </div>
@@ -134,13 +132,13 @@
                 <% @past_events.each do |p| %>
                 <div class="event-structure-card">
                     <!-- <div class="slideshow-container"> -->
-                    <%# p.photos.each do |photo| %>
-                    <!-- <div class="mySlides"> -->
-                    <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
-                    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <%# p.photos.each do |photo| %>
+                        <!-- <div class="mySlides"> -->
+                            <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
+                            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                    <!-- </div> -->
-                    <%# end %>
+                        <!-- </div> -->
+                        <%# end %>
                     <!-- </div> -->
                     <div class="business-info">
                         <h5 class="my-pipeline-title">
@@ -155,8 +153,7 @@
                             <% end %>
                         </p>
                         <div class="button-container">
-                            <button class="button">
-                                <%= link_to "See more", past_event_path(p) %></button>
+                            <button class="button"><%= link_to "See more", past_event_path(p) %></button>
                         </div>
                     </div>
                 </div>
@@ -268,15 +265,15 @@
                             </div>
                         </div>
                     </div>
-                    <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                </div>
+               <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span> -->
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
     </div>
