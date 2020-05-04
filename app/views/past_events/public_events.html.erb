@@ -3,7 +3,7 @@
     <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <div class="logo-left">
           <a href="/">
-            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+            <%= link_to "Home", root_path, class:"nav-link" %>
           </a>
         </div>
         <%= link_to "All past events", past_events_path, class:"nav-link" %>
