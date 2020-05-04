@@ -8,10 +8,11 @@
 }
 
 #logo {
-  height: 100px;
+  height: 150px;
   width: auto;
   margin: 0 0 0 0;
-  padding: 0 16px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
 
 .navbar {
@@ -61,7 +62,10 @@
 @media screen and (min-width: 800px) {
   a.nav-link {
     font-size: 16px;
-    padding: 12px 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 65px;
+    // padding-top: 5px;
   };
 }
 
