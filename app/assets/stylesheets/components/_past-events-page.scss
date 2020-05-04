@@ -1,6 +1,6 @@
 #past-events {
-  background-color: #FFFFFF;
-  // padding-top: 60px;
+  background-color: #FBFBF2;
+  padding-top: 50px;
   padding-bottom: 25px;
   height: auto;
 }
@@ -47,10 +47,6 @@
   margin: 20px;
 }
 
-.business-info h5 {
-  padding: 15px;
-}
-
 // @media screen and (min-width: 601px) {
 //   div.past-events-section h5 {
 //     font-size: 32px;
@@ -72,7 +68,7 @@
   div.event-structure-card {
     display: flex;
     height: auto;
-    width: 40vw;
+    width: 30vw;
     flex-direction: column;
     // flex-wrap: wrap;
     align-items: center;

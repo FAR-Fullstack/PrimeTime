@@ -1,16 +1,17 @@
 .navbar-lewagon {
-  background: black;
+  background: white;
   display: flex;
 }
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 #logo {
-  height: 60px;
+  height: 100px;
   width: auto;
-    margin: 0 0 0 0;
-    padding: 0 16px;
+  margin: 0 0 0 0;
+  padding: 0 16px;
 }
 
 .navbar {
@@ -31,16 +32,18 @@
   };
 }
 
-
 .navbar-lewagon a {
-    color: #CCB774;
-    text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
 }
+
 .navbar-lewagon a:hover {
-    color: #CCB774;
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
-
-
 
 @media screen and (max-width: 600px) {
   div.navbar-lewagon {
@@ -51,14 +54,14 @@
 @media screen and (max-width: 600px) {
   a.nav-link {
     font-size: 8px;
-    padding: 12px 5px;
+    padding: 12px 10px;
   };
 }
 
 @media screen and (min-width: 800px) {
   a.nav-link {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 12px 30px;
   };
 }
 

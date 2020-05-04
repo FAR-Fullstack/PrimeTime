@@ -4,9 +4,10 @@
   <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <div class="logo-left">
           <a href="/">
-            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+            <!-- <img class="navbar-brand" id="logo" src="<%# asset_path('primetimelogo1.png')%>" /> -->
           </a>
         </div>
+        <%= link_to "Home", root_path, class:"nav-link" %>
         <%= link_to "All past events", past_events_path, class:"nav-link" %>
         <% if current_user %>
         <!-- <div class="subnav"> -->
