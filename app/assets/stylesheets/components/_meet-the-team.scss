@@ -73,11 +73,14 @@
   text-align: center;
   color: #CCB774;
   padding-top: 25px;
+  font-size: 18px !important;
 }
 
 .team-card h6 {
   text-align: center;
   color: black;
+  font-size: 14px !important;
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 .team-card p {
@@ -116,7 +119,7 @@
     padding-left: 5px;
   }
   div.team-card h6 {
-    font-size: 14px;
+    font-size: 12px;
     padding-right: 10px;
     padding-left: 10px;
   }

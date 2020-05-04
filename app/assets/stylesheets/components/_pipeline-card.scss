@@ -18,7 +18,7 @@
   width: 35vw;
   margin: 20px;
   text-align: center;
-  background-color: white;
+  background-color: #8D8182;
   padding: 15px;
   border-radius: 5px;
 }
@@ -42,12 +42,24 @@
   padding-bottom: 50px;
 }
 
+.pipeline h5 {
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
 .pipeline p {
   text-align: center;
-  color: grey;
+  color: white;
   padding-top: 5px;
 }
 
+.pipeline small {
+  text-align: center;
+  color: white !important;
+  padding-top: 5px;
+}
 
 // @media screen and (min-width: 601px) {
 //   div.pipeline h5 {

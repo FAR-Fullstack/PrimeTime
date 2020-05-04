@@ -40,7 +40,7 @@
 
               <div class="business-info">
                   <h5 class="my-pipeline-title">
-                      <%= link_to p.title, past_event_path(p) %>
+                      <%= link_to p.title.upcase, past_event_path(p) %>
                   </h5>
                   <p class="my-pipeline-text">
                       <%= p.description %>

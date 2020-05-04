@@ -17,22 +17,29 @@
 
 
 p {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 16px;
-	font-weight: 200;
+	// font-weight: 200;
 }
 
 h4 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 32px;
-	font-weight: 500;
+	font-weight: 700 !important;
+}
+
+h5 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 32px;
+	font-weight: 600 !important;
 }
 
 h2 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 40px;
+	font-weight: 700 !important;
 }
 
 a {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 }
