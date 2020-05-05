@@ -3,7 +3,7 @@
 
   <ul class="pt-300">
   <% @past_events.each do |p| %>
-    <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start %> to <%= p.date_end %>.
+    <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start.strftime("%-d %B") %> to <%= p.date_end.strftime("%-d %B %Y") %>.
       </li>
       <% if !p.photos.empty? %>
 

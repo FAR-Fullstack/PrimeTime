@@ -2,8 +2,8 @@
   <h1><%= @past_event.title %></h1>
   <ul>
     <li><%= @past_event.description %></li>
-    <li><%= @past_event.date_start %></li>
-    <li><%= @past_event.date_end %></li>
+    <li><%= @past_event.date_start.strftime("%-d %B") %></li>
+    <li><%= @past_event.date_end.strftime("%-d %B %Y") %></li>
     <li><%= @past_event.location %></li>
     <% if !@past_event.photos.empty? %>
       <li>

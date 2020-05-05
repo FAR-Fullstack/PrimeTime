@@ -26,7 +26,7 @@
     </div>
     <!-- pipeline events -->
     <div class="pipeline">
-      
+
     <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
     <h4>2020 EVENTS ON THE PIPELINE</h4>
     <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
@@ -37,7 +37,7 @@
             <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>
               <p><%= future_event.description.capitalize %></p>
               <p class="pipeline-text"><%= future_event.location %></p>
-              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start %> to <%= future_event.date_end %></small></p>
+              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start.strftime("%-d %B") %> to <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
 <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->
@@ -75,7 +75,7 @@
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
 </div>
-  
+
 <!-- events type section -->
 <div class="business-structure-container">
     <h5>HOW PRIMETIME OPERATES</h5>
@@ -125,7 +125,7 @@
                   <h5 class="pipeline-title"><%= link_to past_event.title.capitalize, past_event if current_user %></h5>
                   <p><%= past_event.description.capitalize %></p>
                   <p class="pipeline-text"><%= past_event.location %></p>
-                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start %> to <%= past_event.date_end %></small></p>
+                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start.strftime("%-d %B") %> to <%= past_event.date_end.strftime("%-d %B %Y") %></small></p>
                 </div>
               </div>
             <% end %>
