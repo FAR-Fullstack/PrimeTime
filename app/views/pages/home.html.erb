@@ -54,8 +54,8 @@
                         <%= future_event.location.upcase %>
                     </p>
                     <p class="pipeline-text"><small class="text-muted">
-                            <%= future_event.date_start %> to
-                            <%= future_event.date_end %></small></p>
+                            <%= future_event.date_start.strftime("%-d %B") %> to
+                            <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
                     <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->
@@ -119,7 +119,7 @@
                 <h5>PRODUCTION</h5>
                 <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
                 <div class="button-container">
-                <button class="button">See All</button>
+                <button class="button"><%= link_to "See All", root_path %></button>
                 </div>
             </div>
         </div>
@@ -130,14 +130,14 @@
     <!-- past events page-->
 <!--     <section id="past-events">
         <div class="event-structure-container">
-            
+
             <h4>PAST EXPERIENCES</h4>
             <div class="event-structure-cards">
                 <%# @past_events.each do |p| %>
                 <div class="event-structure-card">
-                   
+
                             <%# cl_image_tag p.photos[0].key, style:"width:100%" %>
-                   
+
                     <div class="business-info">
                         <h5 class="past-event-title">
                             <%# link_to p.title, past_event_path(p) %>
