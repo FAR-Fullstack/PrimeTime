@@ -1,8 +1,13 @@
-.past-events-section {
-  background-color: #FFFFFF;
-  padding-top: 25px;
+#past-events {
+  background-color: #FBFBF2;
+  padding-top: 50px;
   padding-bottom: 25px;
   height: auto;
+}
+
+.my-pipeline-title a {
+  margin-top: 25px !important;
+  font-size: 24px !important;
 }
 
 .past-events-section h3 {
@@ -47,15 +52,34 @@
   margin: 20px;
 }
 
-.business-info h5 {
-  padding: 15px;
-}
-
 // @media screen and (min-width: 601px) {
 //   div.past-events-section h5 {
 //     font-size: 32px;
 //   }
 // }
+
+@media screen and (min-width: 768px) {
+  div.event-structure-card {
+    display: flex;
+    height: auto;
+    width: 44vw !important;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.event-structure-card {
+    display: flex;
+    height: auto;
+    width: 30vw;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
 
 @media screen and (max-width: 600px) {
   div.past-events-section h5 {

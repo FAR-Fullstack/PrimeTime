@@ -1,29 +1,52 @@
-<!-- For now, it is a list because we don't have the card component -->
-  <div id="navbar">
-    <% if current_user %>
-    <%= link_to 'Back to main page', root_path %>
-    <%= link_to "Add future events", new_future_event_path %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </div>
-
-<div class="my-pipeline">
-    <div class="my-pipeline-row">
-        <% @future_events.each do |f| %>
-        <div class="my-pipeline-card">
-            <h5 class="my-pipeline-title">
-                <%= link_to f.title, f if current_user %>
-            </h5>
-            <p>
-                <%= f.description %>
-            </p>
-            <p class="my-pipeline-text">
-                <%= f.location %>
-            </p>
-            <p class="my-pipeline-text"><small class="text-muted">
-                    <%= f.date_start.strftime("%-d %B") %> to
-                    <%= f.date_end.strftime("%-d %B %Y") %></small></p>
+<!-- index future events -->
+<div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <div class="logo-left">
+          <a href="/">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+          </a>
         </div>
+        <% if current_user %>
+        <!-- <div class="subnav"> -->
+            <!-- <div class="subnav-content"> -->
+                <%= link_to "Add future events", new_future_event_path, class:"nav-link"%>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <!-- </div> -->
+        <!-- </div> -->
+
         <% end %>
+
+        <!-- </ul> -->
+        <!-- </div> -->
+</div>
+
+<div class="pipeline">
+    <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
+    <h4>WHAT IS COMING</h4>
+    <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
+    <div class="col-container">
+        <div class="pipeline-row">
+            <% @future_events.each do |future_event| %>
+            <div class="pipeline-card">
+                <h5 class="pipeline-title">
+                    <%= link_to future_event.title, future_event if current_user %>
+                </h5>
+
+                <p>
+                    <%= future_event.description.capitalize %>
+                </p>
+                <p class="pipeline-text">
+                    <%= future_event.location %>
+                </p>
+                <p class="pipeline-text"><small class="text-muted">
+                        <%= future_event.date_start.strftime("%-d %B") %> to
+                        <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
+                <!--             <div class="button-separation">
+            <button class="button">More Info</button>
+            </div> -->
+
+            </div>
+            <% end %>
+        </div>
     </div>
 </div>
+

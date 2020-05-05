@@ -8,9 +8,10 @@
 
 .the-team {
   height: auto;
-  background-color: #F2EDEB;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  background-color: #CFD2CD;
+  padding-top: 50px;
+  padding-bottom: 70px;
+
 }
 
 .the-team h5 {
@@ -23,6 +24,7 @@
   text-align: center;
   color: black;
   padding-top: 5px;
+  padding-bottom: 25px;
 }
 
 .the-team p {
@@ -40,7 +42,7 @@
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 15px;
+  padding-top: 50px;
 }
 
 
@@ -49,7 +51,6 @@
   // margin-bottom: 16px;
   padding: 25px;
   width: 25vw;
-  // height: 250px;
 }
 
 @media screen and (max-width: 650px) {
@@ -62,25 +63,87 @@
 .team-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 25px;
+  // padding: 25px;
   background-color: white;
+  height: 200px;
+  position: relative;
 }
 
 .team-card h4 {
   text-align: center;
   color: #CCB774;
-  padding-top: 10px;
+  padding-top: 25px;
+  font-size: 18px !important;
 }
 
 .team-card h6 {
   text-align: center;
   color: black;
+  font-size: 14px !important;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.team-card p {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  right: 5%;
 }
 
 .team-card::after, .row::after {
   content: "";
   clear: both;
   display: table;
+}
+
+@media screen and (min-width: 768px) {
+  div.team-card p {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.team-card h6 {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.team-column {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.team-card p {
+    font-size: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.team-card h6 {
+    font-size: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  div.team-column {
+    width: 240px;
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  div.team-card p {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.team-card h6 {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.team-column {
+    width: 330px;
+    padding: 15px;
+  }
 }
 
 
@@ -93,8 +156,8 @@
 @media screen and (max-width: 600px) {
   div.the-team h5 {
     font-size: 24px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -107,8 +170,8 @@
 @media screen and (max-width: 600px) {
   div.the-team h4 {
     font-size: 32px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -121,7 +184,7 @@
 @media screen and (max-width: 600px) {
   div.the-team p {
     font-size: 16px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }

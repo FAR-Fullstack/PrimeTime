@@ -8,8 +8,49 @@
   justify-content: center;
 }
 
-.my-pipeline-row{
+@media screen and (min-width: 1024px) {
+  div.future {
+  width: 100vh
+  }
 }
+
+@media screen and (max-width: 600px) {
+  div.future {
+  width: 100vh
+  }
+}
+
+// @media screen and (min-width: 601px) {
+//   div.future {
+//   height: 550px;
+//   }
+// }
+
+
+@media screen and (min-width: 768px) {
+  div.pipeline-card {
+    // display: flex;
+    // height: auto;
+    width: 42vw !important;
+    // flex-direction: column;
+    // // flex-wrap: wrap;
+    // align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.pipeline-card {
+    // display: flex;
+    // height: auto;
+    width: 30vw !important;
+    // flex-direction: column;
+    // // flex-wrap: wrap;
+    // align-items: center;
+    // margin-right: 5px !important;
+    // margin-left: 5px !important;
+  }
+}
+
 
 .my-pipeline-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -24,7 +65,21 @@
 .my-pipeline-title h5 {
   text-align: center;
   color: #CCB774;
-  padding-top: 5px;
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.my-pipeline-title a {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.my-pipeline-title a:hover {
+  text-align: center;
+  color: #CCB774;
+  padding-top: 10px;
   font-size: 30px;
 }
 

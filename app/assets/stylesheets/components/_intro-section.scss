@@ -1,36 +1,50 @@
 .banner-and-intro {
   height: auto;
-  padding-top: 25px;
+  padding-top: 50px;
   padding-bottom: 25px;
 }
 
-.intro h2 {
+.intro h4 {
 	text-align: center;
-	color: #CCB774;
+  padding-bottom: 30px;
+	// color: #CCB774;
 }
 
 .intro p {
-	color: #B8BAC8;
-	font-size: 24px;
-  text-align: center;
+	color: grey;
+  font-size: 18px;
 }
 
+.banner-and-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 25px;
+}
+
+.intro p {
+  padding-top: 15px;
+  text-align: justify;
+  max-width: 900px;
+}
 
 @media screen and (min-width: 601px) {
-  div.intro h2 {
-    font-size: 50px;
+  div.intro h4 {
+    // font-size: 40px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  div.intro h2 {
-    font-size: 30px;
+  div.intro h4 {
+    // font-size: 30px;
   }
 }
 
 @media screen and (min-width: 601px) {
   div.intro p {
-    font-size: 24px;
+    // font-size: 24px;
     padding-left: 80px;
     padding-right: 80px;
   }
@@ -39,6 +53,7 @@
 @media screen and (max-width: 600px) {
   div.intro p {
     font-size: 16px;
+    width: auto;
     padding-left: 15px;
     padding-right: 15px;
   }

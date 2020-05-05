@@ -1,7 +1,30 @@
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <h4>Edit Past Event</h4>
-        <%= render 'form', past_event: @past_event %>
-        <%= link_to 'Back to home', root_path %> |
-      </div>
-    </div>
+<div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <div class="logo-left">
+          <a href="/">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+          </a>
+        </div>
+        <%= link_to "All past events", past_events_path, class:"nav-link" %>
+        <% if current_user %>
+        <!-- <div class="subnav"> -->
+            <!-- <div class="subnav-content"> -->
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <!-- </div> -->
+        <!-- </div> -->
+        
+        <% end %>
+
+        <!-- </ul> -->
+        <!-- </div> -->
+</div>
+
+<div class="form-container">
+    <h5>Edit Past Event</h5>
+  <div class="form-box">
+  	<div class="full-form">
+    	<%= render 'form', past_event: @past_event %>
+  	</div>
+  </div>
+</div>
+
+

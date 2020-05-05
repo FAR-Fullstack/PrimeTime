@@ -1,3 +1,27 @@
+<div class="wrapper">
+
+<div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <div class="logo-left">
+          <a href="/">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+          </a>
+        </div>
+        <%= link_to 'Back to my future events', future_events_path, class:"nav-link" %>
+        <% if current_user %>
+        <!-- <div class="subnav"> -->
+            <!-- <div class="subnav-content"> -->
+                <%= link_to "Edit the event", edit_future_event_path(@future_event), class:"nav-link" %>
+                <%= link_to "delete the event", future_event_path(@future_event.id), data: { confirm: "Are you sure?" }, method: :delete, class:"nav-link" %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <!-- </div> -->
+        <!-- </div> -->
+        
+        <% end %>
+
+        <!-- </ul> -->
+        <!-- </div> -->
+  </div>
+
 <div class="my-pipeline">
     <div class="my-pipeline-row">
         <div class="my-pipeline-card">
@@ -6,19 +30,12 @@
                     <%= @future_event.title %>
                 </h5>
             </div>
+            <p class="my-pipeline-text">
             <%= @future_event.description %>
             <%= @future_event.date_start.strftime("%-d %B %Y") %>
             <%= @future_event.date_end.strftime("%-d %B %Y") %>
             <%= @future_event.location %>
-            <p class="text-center" id="edit">
-                <%= link_to '<i class="fas fa-edit icons"></i>'.html_safe, edit_future_event_path(@future_event) if current_user %>
-            </p>
-            <p class="text-center" id="trash">
-                <%= link_to '<i class="fas fa-trash icons"></i>'.html_safe, future_event_path(@future_event.id), data: { confirm: "Are you sure?" }, method: :delete if current_user %>
             </p>
         </div>
-        <p>
-            <%= link_to 'Back to my future events', future_events_path %>
-        </p>
     </div>
 </div>

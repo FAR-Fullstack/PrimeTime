@@ -1,6 +1,5 @@
 // Import your components CSS files here.
 @import "alert";
-@import "avatar";
 @import "navbar";
 @import "footer";
 @import "banner";
@@ -11,5 +10,36 @@
 @import "pipeline-card";
 @import "button";
 @import "past-events-page";
+@import "past-event-carousel";
 @import "future-events-form";
 @import "future-event-index";
+@import "subnav";
+
+
+p {
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 16px;
+	// font-weight: 200;
+}
+
+h4 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 32px;
+	font-weight: 700 !important;
+}
+
+h5 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 32px;
+	font-weight: 600 !important;
+}
+
+h2 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 40px;
+	font-weight: 700 !important;
+}
+
+a {
+	font-family: 'Josefin Sans', sans-serif;
+}

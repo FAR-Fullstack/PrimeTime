@@ -1,114 +1,119 @@
 <div class="wrapper">
-
-  <!-- navbar -->
-  <div id="navbar">
-    <a href="#home">Home</a>
-    <a href="#events">Our Events</a>
-    <a href="#contact">Contact Us</a>
-    <% if current_user %>
-    <%= link_to "My future events", future_events_path %>
-    <%= link_to "Add future events", new_future_event_path %>
-    <%= link_to "My past events", past_events_path %>
-    <%= link_to "Add past events", new_past_event_path %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </div>
-
+    <section id="home">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1485628390555-1a7bd503f9fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")>
+        </div>
+    </section>
+    <!-- navbar -->
+    <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+        <a class="nav-link" href="#Structure">STRUCTURE</a>
+        <a class="nav-link" href="#past-events">EVENTS</a>
+        <% if current_user %>
+        <div class="subnav">
+            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+            <div class="subnav-content">
+                <%= link_to "My future events", future_events_path, class:"subnavbtn" %>
+                <%= link_to "Add future events", new_future_event_path, class:"subnavbtn" %>
+                <%= link_to "My past events", past_events_path, class:"subnavbtn" %>
+                <%= link_to "Add past events", new_past_event_path, class:"subnavbtn" %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"subnavbtn" %>
+            </div>
+        </div>
+        <% else %>
+        <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+        <% end %>
+        <a class="nav-link" href="#team">TEAM</a>
+        <a class="nav-link" href="#contact">CONTACT</a>
+        <!-- </ul> -->
+        <!-- </div> -->
+    </div>
     <!-- banner with logo -->
     <div class="banner-and-intro">
-        <div class="banner responsive" style="background-image: url(<%= asset_path('primetimelogo1.png')%>);"></div>
         <!-- intro section -->
         <div class="intro">
-            <h2>OUR VISION</h2>
-            <p>The Korean culture has been omnipresent around the world through its music, food and TV series for years. This wave, best known as Hallyu, piqued and is still piquing people’s attention and we, at PRIMETIME, believe that the wave can be further spread through lot of other different facets of the emerging country.</p>
-            <p>Korea is the reference of innovation and technology, yet still unfamiliar or unknown to a lot of people. PRIMETIME aims to become the beacon spreading the Korean culture around the globe and let the world discover Hallyu in different ways.</p>
+            <h4>ABOUT</h4>
+            <p>Aiming at promoting intercultural and commercial exchanges between France and Korea, Primetime brings together a young and dynamic team oriented towards the collective and open to the world.</p>
+            <p>With a large network of economic and cultural players, our role is ultimately to respond to a real need for adaptation in the context of globalization, and to offer a new perspective based on the development of concrete actions with multiple objectives. We thus generate conversations and relationships feeding the spaces of exchanges, media and digital visibilities.</p>
         </div>
     </div>
     <!-- pipeline events -->
     <div class="pipeline">
-
-    <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5>
-    <h4>2020 EVENTS ON THE PIPELINE</h4>
-    <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p>
-      <div class="col-container">
-        <div class="pipeline-row">
-          <% @future_events.each do |future_event| %>
-          <div class="pipeline-card">
-            <h5 class="pipeline-title"><%= future_event.title.capitalize %></h5>
-              <p><%= future_event.description.capitalize %></p>
-              <p class="pipeline-text"><%= future_event.location %></p>
-              <p class="pipeline-text"><small class="text-muted"><%= future_event.date_start.strftime("%-d %B") %> to <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
-<!--             <div class="button-separation">
+        <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
+        <h4>WHAT IS COMING</h4>
+        <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
+        <div class="col-container">
+            <div class="pipeline-row">
+                <% @future_events.each do |future_event| %>
+                <div class="pipeline-card">
+                    <h5 class="pipeline-title">
+                        <%= future_event.title.upcase %>
+                    </h5>
+                    <p>
+                        <%= future_event.description.capitalize %>
+                    </p>
+                    <p class="pipeline-text">
+                        <%= future_event.location.upcase %>
+                    </p>
+                    <p class="pipeline-text"><small class="text-muted">
+                            <%= future_event.date_start.strftime("%-d %B") %> to
+                            <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
+                    <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->
-          </div>
-          <% end %>
+                </div>
+                <% end %>
+            </div>
         </div>
-    </div>
-
-     <!-- see more button showing more events -->
-      <!-- <div>
-
+        <!-- see more button showing more events -->
+        <!-- <div>
         <input type="checkbox" class="read-more-state" id="post-2" />
-
         <ul class="read-more-wrap">
           <div class="pipeline-row">
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">START-UPS B2B MEET-UPS AND SEMINARS</h5>
                   <p class="pipeline-text"><small class="text-muted">October 2020</small></p>
             </div>
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">GUEST SPEAKERS CONFERENCES</h5>
                   <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
             </div>
-
             <div class="read-more-target pipeline-card">
                   <h5 class="pipeline-title">KOREAN CHRISTMAS MARKET</h5>
                   <p class="pipeline-text"><small class="text-muted">December 2020</small></p>
             </div>
-
           </div>
         </ul>
-
         <label for="post-2" class="read-more-trigger"></label>
       </div> -->
 </div>
 
 <!-- events type section -->
+<section id="Structure">
 <div class="business-structure-container">
-    <h5>HOW PRIMETIME OPERATES</h5>
-    <h4>OUR BUSINESS STRUCTURE</h4>
-    <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p>
+    <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
+    <h4>BUSINESS STRUCTURE</h4>
+    <!-- <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p> -->
     <div class="business-structure-cards">
         <div class="business-card">
-            <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-            <div class="business-info">
-                <h5>PRODUCTION</h5>
-                <p>Audit, analysis, marketing and recommendations, as well as content
-                    creation around and during your events. Our clients all have different needs and objectives.</p>
-                <button class="button">Past Productions</button>
-            </div>
-        </div>
-        <div class="business-card">
             <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
-            <div class="business-info">
+            <div class="business-info type">
                 <h5>PRIVATE EVENTS</h5>
-                <p>Creation and planning of customized events for our private clients, that are as distinctive
-                    as they are compelling. Every event has a purpose, a message to communicate and an objective to meet.</p>
-                <button class="button">Past Private Events</button>
+                <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
+                <div class="button-container">
+                <button class="button"><%= link_to "See All", private_events_past_events_path %></button>
+                </div>
             </div>
         </div>
         <div class="business-card">
             <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-            <div class="business-info">
+            <div class="business-info type">
                 <h5>PUBLIC EVENTS</h5>
-                <p>Creating a unique experience in the collaboration of the city of Paris through
-                    public and free events and festivals centered in one particular theme in related with Korea throughout the year.</p>
-                <button class="button">Past Public Events</button>
+                <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
+                <div class="button-container">
+                <button class="button"><%= link_to "See All", public_events_past_events_path %></button>
+                </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
 </div>
 <!-- past events page-->
@@ -126,182 +131,180 @@
                   <p><%= past_event.description.capitalize %></p>
                   <p class="pipeline-text"><%= past_event.location %></p>
                   <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start.strftime("%-d %B") %> to <%= past_event.date_end.strftime("%-d %B %Y") %></small></p>
-                </div>
-              </div>
-            <% end %>
-        </div>
-      </div>
-    </div>
-</section>
-
-
-
-<!-- CAROUSEL TEST -->
-<div class="past-events-cards">
-    <div class="event-card">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/301987/pexels-photo-301987.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100" alt="...">
+=======
+        <div class="business-card">
+            <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+            <div class="business-info type">
+                <h5>PRODUCTION</h5>
+                <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
+                <div class="button-container">
+                <button class="button">See All</button>
+>>>>>>> master
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        <div class="business-info">
-            <h5>PUBLIC EVENTS</h5>
-            <p>Creating a unique experience in the collaboration of the city of Paris through
-                public and free events and festivals centered in one particular theme in related with Korea throughout the year.</p>
-            <button class="button">Past Public Events</button>
         </div>
     </div>
 </div>
-<!-- meet the team -->
-<div class="the-team">
-    <h5>PRIMETIME’S TEAM</h5>
-    <h4>ALWAYS AT YOUR DISPOSAL</h4>
-    <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p>
-    <div class="team-row">
-        <div class="full-team-cards">
-            <div class="full-team-card">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>JAY LEE</h4>
-                                    <h6 class="title">FOUNDER AND PRESIDENT</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 74 08 60 34</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SAMUEL SONG</h4>
-                                    <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-                                        <p class="pipeline-text"><small class="text-muted">+ 33 6 24 15 13 06</small></p>
-                                        <p class="pipeline-text"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SEOYO LEE</h4>
-                                    <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 99 46 74 33</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SEBASTIEN HAN</h4>
-                                    <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 7 60 00 19 94</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
-                                </div>
-                            </div>
+</section>
+
+    <!-- past events page-->
+<!--     <section id="past-events">
+        <div class="event-structure-container">
+
+            <h4>PAST EXPERIENCES</h4>
+            <div class="event-structure-cards">
+                <%# @past_events.each do |p| %>
+                <div class="event-structure-card">
+
+                            <%# cl_image_tag p.photos[0].key, style:"width:100%" %>
+
+                    <div class="business-info">
+                        <h5 class="past-event-title">
+                            <%# link_to p.title, past_event_path(p) %>
+                        </h5>
+                        <p class="past-event-text">
+                            <%# p.description %>
+                            <%# p.location %> From
+                            <%# p.date_start %> to
+                            <%# p.date_end %>
+                            <%# if !p.photos.empty? %>
+                            <%# end %>
+                        </p>
+                        <div class="button-container">
                         </div>
-                        <div class="carousel-item">
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>EUN KIM</h4>
-                                    <h6 class="title">SALES AND MARKETING MANAGER</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 78 52 52 21</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                    </div>
+                </div>
+                <%# end %>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- meet the team -->
+    <section id="team">
+    <div class="the-team">
+        <!-- <h5>PRIMETIME’S TEAM</h5> -->
+        <h4>TEAM</h4>
+        <!-- <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p> -->
+        <div class="team-row">
+            <div class="full-team-cards">
+                <div class="full-team-card">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>JAY LEE</h4>
+                                        <h6 class="title">FOUNDER AND PRESIDENT</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SAMUEL SONG</h4>
+                                        <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+                                            <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SEOYO LEE</h4>
+                                        <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SEBASTIEN HAN</h4>
+                                        <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>HAYAN KIM</h4>
-                                    <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 25 64 53 01</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                            <div class="carousel-item">
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>EUN KIM</h4>
+                                        <h6 class="title">SALES AND MARKETING MANAGER</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>SWAN KIM</h4>
-                                    <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 16 84 10 72</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                <!-- <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>HAYAN KIM</h4>
+                                        <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
+                                </div> -->
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>SWAN KIM</h4>
+                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="team-column">
-                                <div class="team-card">
-                                    <h4>KUNWOO KOO</h4>
-                                    <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                    <p class="pipeline-text"><small class="text-muted">+ 33 6 89 96 38 32</small></p>
-                                    <p class="pipeline-text"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                <div class="team-column">
+                                    <div class="team-card">
+                                        <h4>KUNWOO KOO</h4>
+                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+               <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Next</span> -->
                 </a>
             </div>
         </div>
     </div>
-</div>
-<!-- contact us section -->
-<section id="contact">
-<div class="contact-container">
-    <div class="contact-us">
-        <h3>CONTACT US</h3>
-    </div>
-    <div class="row">
-        <div class="contact-column">
-            <div class="banner responsive logo" style="background-image: url(<%= asset_path('logo-transparent.png')%>);"></div>
-        </div>
-        <div class="contact-column">
-            <form action="/action_page.php">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="australia">France</option>
-                    <option value="canada">South Korea</option>
-                    <option value="usa">Other</option>
-                </select>
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-                <button class="button">Submit</button>
-        </div>
-        </form>
-    </div>
-</div>
-</div>
+    </section>
+    <!-- contact us section -->
+    <!-- <section id="contact">
+        <div class="contact-container">
+            <div class="contact-us">
+                <h4>CONTACT</h4>
+            </div>
+            <div class="row">
+                <div class="contact-column">
+                    <div class="banner responsive logo" style="background-image: url(<%# asset_path('logo-transparent.png')%>);"></div>
+                </div>
+                <div class="contact-column">
+                    <form action="/action_page.php">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="australia">France</option>
+                            <option value="canada">South Korea</option>
+                            <option value="usa">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                        <button class="button">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div> -->
+
 </section>
 <!-- footer -->
 <div class="footer">
     <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/primetime.fr/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/primetime.fr" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
     <div class="footer-copyright">
-        Website made with <i class="fas fa-heart"></i> by FAR
+        Website made by <a href="https://github.com/FAR-Fullstack" target="_blank">FAR</a>
+
     </div>
     <div>
         <%= link_to "Admin corner", new_user_session_path %>
@@ -314,7 +317,7 @@ window.onscroll = function() {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-150px";
+        document.getElementById("navbar").style.top = "-150px";
     }
     prevScrollpos = currentScrollPos;
 }

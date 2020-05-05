@@ -1,26 +1,48 @@
 .business-structure-container {
   height: auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: #eee4e1;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: white;
 }
 
 .business-structure-container h5 {
   text-align: center;
   color: #CCB774;
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
 .business-structure-container h4 {
   text-align: center;
   color: black;
   padding-top: 5px;
+  padding-bottom: 50px;
 }
 
 .business-structure-container p {
   text-align: center;
   color: grey;
-  padding-top: 5px;
+}
+
+.business-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  right: 30%;
+}
+
+.business-info {
+  position: relative;
+  height: auto !important;
+  margin-bottom: 10px !important;
+}
+
+.business-info.type {
+  height: 215px !important;
 }
 
 .business-structure-cards {
@@ -28,10 +50,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .business-card {
-  width: 45vh;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -40,30 +62,59 @@
   margin: 20px;
 }
 
-@media screen and (max-width: 600px) {
-  div.business-card {
-    display: flex;
-    height: auto;
-    width: 100%;
-    flex-direction: column;
-    // flex-wrap: wrap;
-    align-items: center;
-  }
-}
-
-.business-info h5 {
-  padding-top: 25px;
-}
-
 .business-info p {
   padding: 0px 15px 15px 15px;
 }
 
-// @media screen and (min-width: 601px) {
-//   div.business-structure-container h5 {
-//     font-size: 32px;
-//   }
-// }
+@media screen and (min-width: 600px) {
+  div.business-card {
+    // display: flex;
+    // height: auto;
+    width: 100vw;
+    // flex-direction: column;
+    // // flex-wrap: wrap;
+    // align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div.business-card {
+    display: flex;
+    height: auto;
+    width: 44vw !important;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+  }
+  div.business-info {
+    position: relative;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.business-card {
+    display: flex;
+    height: auto;
+    width: 25vw !important;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    align-items: center;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+  div.business-info p {
+    padding: 5px 10px;
+  }
+  div.button-container .button {
+    position:relative;
+    width: auto;
+    font-size: 14px;
+    bottom: 0 !important;
+    left: 5%;
+    right: 5%;
+  }
+}
 
 @media screen and (max-width: 600px) {
   div.business-structure-container h5 {
@@ -73,30 +124,10 @@
   }
 }
 
-// @media screen and (min-width: 601px) {
-//   div.business-structure-container h4 {
-//     font-size: 40px;
-//   }
-// }
-
-@media screen and (max-width: 600px) {
-  div.business-structure-container h4 {
-    font-size: 32px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-// @media screen and (min-width: 601px) {
-//   div.business-structure-container p {
-//     font-size: 24px;
-//   }
-// }
-
 @media screen and (max-width: 600px) {
   div.business-structure-container p {
     font-size: 16px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }

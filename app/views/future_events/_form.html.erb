@@ -4,6 +4,6 @@
 <%= f.input :date_start %>
 <%= f.input :date_end %>
 <%= f.input :location %>
+<%= f.input :category, :as => :check_boxes, :collection => ["Public Event", "Private Event"] %>
 <%= f.button :submit%>
 <% end %>
-
