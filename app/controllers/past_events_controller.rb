@@ -48,6 +48,14 @@ class PastEventsController < ApplicationController
     @past_events = PastEvent.where(category: "Private Event")
   end
 
+  def delete_one_photo
+    @past_event = PastEvent.find(params[:id])
+    raise
+    photo = @past_event.photos[params[:photos[]]]
+    photo.destroy
+    redirect_to past_events_path, notice: 'successfully delete'
+  end
+
   private
 
   def past_event_params
