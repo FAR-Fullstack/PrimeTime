@@ -1,8 +1,8 @@
 <%= simple_form_for @future_event do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :date_start %>
-<%= f.input :date_end %>
+<%= f.input :date_start, as: :string, input_html: {class: "datepicker"} %>
+<%= f.input :date_end, as: :string, input_html: {class: "datepicker"} %>
 <%= f.input :location %>
 <%= f.input :category, :as => :check_boxes, :collection => ["Public Event", "Private Event"] %>
 <%= f.button :submit%>
