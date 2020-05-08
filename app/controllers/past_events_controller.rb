@@ -49,7 +49,7 @@ class PastEventsController < ApplicationController
   end
 
   def delete_one_photo
-    @past_event = PastEvent.find(params[:id])
+    @past_event = PastEvent.find(past_event_params[:id])
     raise
     photo = @past_event.photos[params[:photos[]]]
     photo.destroy
