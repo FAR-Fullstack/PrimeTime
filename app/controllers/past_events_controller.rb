@@ -49,10 +49,10 @@ class PastEventsController < ApplicationController
   end
 
   def delete_one_photo
-    @past_event = PastEvent.find(past_event_params[:id])
+    @past_event = PastEvent.find(params[:id])
     raise
-    photo = @past_event.photos[params[:photos[]]]
-    photo.destroy
+    # photo = @past_event.photos[past_event_params[:id]]
+    # photo.destroy
     redirect_to past_events_path, notice: 'successfully delete'
   end
 
@@ -61,5 +61,4 @@ class PastEventsController < ApplicationController
   def past_event_params
     params.require(:past_event).permit(:title, :description, :date_start, :date_end, :location, :id, category: [], photos: [])
   end
-
 end

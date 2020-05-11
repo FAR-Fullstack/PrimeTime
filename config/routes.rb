@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     collection do
     	get "public_events"
     	get "private_events"
+    end
+    member do
       delete "delete_one_photo"
     end
   end
+
 
   resources :future_events
 
