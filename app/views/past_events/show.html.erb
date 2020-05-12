@@ -46,7 +46,9 @@
 
         <% @past_event.photos.each do |photo| %>
         <div class="column">
-            <%= cl_image_tag photo.key, style:"width:100%" %>
+            <div class="zoom">
+                <%= cl_image_tag photo.key, style:"width:100%" %>
+            </div>
         </div>
         <% end %>
     </div>
