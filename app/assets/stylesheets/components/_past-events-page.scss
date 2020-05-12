@@ -56,11 +56,22 @@
   margin: 20px;
 }
 
-// @media screen and (min-width: 601px) {
-//   div.past-events-section h5 {
-//     font-size: 32px;
-//   }
-// }
+.zoom {
+  transition: transform .2s;
+}
+
+@media screen and (min-width: 1024px) {
+    .zoom:hover {
+        -ms-transform: scale(1.5);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.5);
+        object-fit: contain !important;
+        position: center;
+        // margin: 0 50px;
+    }
+}
 
 @media screen and (min-width: 768px) {
   div.event-structure-card {
