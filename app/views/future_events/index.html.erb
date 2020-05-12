@@ -1,5 +1,4 @@
 <!-- index future events -->
-
 <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <div class="logo-left">
           <a href="/">
@@ -13,7 +12,7 @@
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
             <!-- </div> -->
         <!-- </div> -->
-        
+
         <% end %>
 
         <!-- </ul> -->
@@ -31,7 +30,7 @@
                 <h5 class="pipeline-title">
                     <%= link_to future_event.title, future_event if current_user %>
                 </h5>
-                    
+
                 <p>
                     <%= future_event.description.capitalize %>
                 </p>
@@ -39,8 +38,8 @@
                     <%= future_event.location %>
                 </p>
                 <p class="pipeline-text"><small class="text-muted">
-                        <%= future_event.date_start %> to
-                        <%= future_event.date_end %></small></p>
+                        <%= future_event.date_start.strftime("%-d %B") %> to
+                        <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
                 <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->

@@ -1,4 +1,25 @@
+<<<<<<< HEAD
+<!-- For now, it is a list because we don't have the card component -->
+<div class="container">
+
+  <ul class="pt-300">
+  <% @past_events.each do |p| %>
+    <li><%= link_to p.title, p if current_user %>, <%= p.description %> <%= p.location %>. From <%= p.date_start.strftime("%-d %B") %> to <%= p.date_end.strftime("%-d %B %Y") %>.
+      </li>
+      <% if !p.photos.empty? %>
+
+      <% p.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+  <% end %>
+  <% end %>
+  </ul>
+  <%= link_to "Back to home", :root %>
+  <%= link_to 'Add a past event', "past_events/new", class: "btn btn-primary" %>
+</div>
+=======
 <section id="past-events">
+>>>>>>> master
 
   <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <div class="logo-left">

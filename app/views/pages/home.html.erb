@@ -54,8 +54,8 @@
                         <%= future_event.location.upcase %>
                     </p>
                     <p class="pipeline-text"><small class="text-muted">
-                            <%= future_event.date_start %> to
-                            <%= future_event.date_end %></small></p>
+                            <%= future_event.date_start.strftime("%-d %B") %> to
+                            <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
                     <!--             <div class="button-separation">
             <button class="button">More Info</button>
             </div> -->
@@ -113,6 +113,25 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+    </div>
+</div>
+<!-- past events page-->
+<section id="past-events">
+  <div class="past-events-section">
+    <h5>THINKING OUT OF THE BOX</h5>
+    <h4>SOME EXPERIENCES WE HAVE CREATED</h4>
+      <div class="col-container">
+        <div class="past-events-cards">
+            <% @past_events.each do |past_event| %>
+              <div class="event-card">
+                <div class="business-info">
+                  <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  class="card-img-top" alt="...">
+                  <h5 class="pipeline-title"><%= link_to past_event.title.capitalize, past_event if current_user %></h5>
+                  <p><%= past_event.description.capitalize %></p>
+                  <p class="pipeline-text"><%= past_event.location %></p>
+                  <p class="pipeline-text"><small class="text-muted"><%= past_event.date_start.strftime("%-d %B") %> to <%= past_event.date_end.strftime("%-d %B %Y") %></small></p>
+=======
         <div class="business-card">
             <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
             <div class="business-info type">
@@ -120,6 +139,7 @@
                 <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
                 <div class="button-container">
                 <button class="button">See All</button>
+>>>>>>> master
                 </div>
             </div>
         </div>
@@ -130,14 +150,14 @@
     <!-- past events page-->
 <!--     <section id="past-events">
         <div class="event-structure-container">
-            
+
             <h4>PAST EXPERIENCES</h4>
             <div class="event-structure-cards">
                 <%# @past_events.each do |p| %>
                 <div class="event-structure-card">
-                   
+
                             <%# cl_image_tag p.photos[0].key, style:"width:100%" %>
-                   
+
                     <div class="business-info">
                         <h5 class="past-event-title">
                             <%# link_to p.title, past_event_path(p) %>

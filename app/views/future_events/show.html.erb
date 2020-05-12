@@ -32,8 +32,8 @@
             </div>
             <p class="my-pipeline-text">
             <%= @future_event.description %>
-            <%= @future_event.date_start %>
-            <%= @future_event.date_end %>
+            <%= @future_event.date_start.strftime("%-d %B %Y") %>
+            <%= @future_event.date_end.strftime("%-d %B %Y") %>
             <%= @future_event.location %>
             </p>
         </div>
