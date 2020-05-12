@@ -5,6 +5,10 @@
   height: auto;
 }
 
+.past-event-info.show p {
+  padding: 0 300px !important;
+}
+
 .my-pipeline-title a {
   margin-top: 25px !important;
   font-size: 24px !important;
@@ -52,11 +56,22 @@
   margin: 20px;
 }
 
-// @media screen and (min-width: 601px) {
-//   div.past-events-section h5 {
-//     font-size: 32px;
-//   }
-// }
+.zoom {
+  transition: transform .2s;
+}
+
+@media screen and (min-width: 1024px) {
+    .zoom:hover {
+        -ms-transform: scale(1.5);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.5);
+        object-fit: contain !important;
+        position: center;
+        // margin: 0 50px;
+    }
+}
 
 @media screen and (min-width: 768px) {
   div.event-structure-card {
@@ -89,11 +104,22 @@
   }
 }
 
-// @media screen and (min-width: 601px) {
-//   div.past-events-section h4 {
-//     font-size: 40px;
-//   }
-// }
+@media screen and (max-width: 900px) {
+  .past-event-info.show p {
+    font-size: 16px !important;
+    padding: 15px 30px !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .past-event-info.show h5 {
+    font-size: 16px !important;
+    padding: 15px 20px !important;
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
+}
 
 @media screen and (max-width: 600px) {
   div.past-events-section h4 {

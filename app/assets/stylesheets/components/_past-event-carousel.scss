@@ -172,11 +172,11 @@ img {vertical-align: middle;}
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .column {
     -ms-flex: 50%;
     flex: 50%;
-    max-width: 50%;
+    max-width: 46%;
   }
 }
 
@@ -186,11 +186,5 @@ img {vertical-align: middle;}
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .past-event-info.show h5 {
-    margin-top: 130px;
   }
 }

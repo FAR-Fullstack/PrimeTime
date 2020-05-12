@@ -15,7 +15,7 @@
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
             <!-- </div> -->
         <!-- </div> -->
-        
+
         <% end %>
 
         <!-- </ul> -->
@@ -42,14 +42,14 @@
                   <h5 class="my-pipeline-title">
                       <%= link_to p.title.upcase, past_event_path(p) %>
                   </h5>
-                  <p class="my-pipeline-text">
-                      <%= p.description %>
-                      <%= p.location %> From
+                  <p class="my-pipeline-text"> <%= p.description %> </p>
+                  <p class="my-pipeline-text"> <%= p.location %> </p>
+                  <p class="my-pipeline-text"> From
                       <%= p.date_start %> to
-                      <%= p.date_end %>
-                      <% if !p.photos.empty? %>
-                      <% end %>
-                  </p>
+                      <%= p.date_end %> </p>
+                  <p class="my-pipeline-text"> <% if !p.photos.empty? %>
+                      <% end %> </p>
+
               </div>
             </div>
 
@@ -58,7 +58,7 @@
 
     </div>
 </section>
-     
+
 
 <script>
 
@@ -89,12 +89,12 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}    
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+      slides[i].style.display = "none";
   };
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
 };
 
 </script>

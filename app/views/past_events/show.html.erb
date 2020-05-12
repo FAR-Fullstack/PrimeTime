@@ -29,7 +29,7 @@
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
             <!-- </div> -->
         <!-- </div> -->
-        
+
         <% end %>
 
         <!-- </ul> -->
@@ -38,7 +38,7 @@
 
 <div class="past-event-container show">
     <div class="row">
-        
+
         <div class="past-event-info show">
             <h5>
                 <%= @past_event.title.upcase %>
@@ -59,7 +59,9 @@
 >>>>>>> master
         <% @past_event.photos.each do |photo| %>
         <div class="column">
-            <%= cl_image_tag photo.key, style:"width:100%" %>
+            <div class="zoom">
+                <%= cl_image_tag photo.key, style:"width:100%" %>
+            </div>
         </div>
         <% end %>
     </div>
