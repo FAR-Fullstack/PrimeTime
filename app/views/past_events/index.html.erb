@@ -1,66 +1,44 @@
+<!-- navbar -->
+<div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
+  <%= link_to "Home", root_path, class:"nav-link" %>
+  <%= link_to "Public Events", public_events_past_events_path, class:"nav-link" %>
+  <%= link_to "Private Events", private_events_past_events_path, class:"nav-link" %>
+  <% if current_user %>
+    <%= link_to "Add past events", new_past_event_path, class:"nav-link" %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+  <% end %>
+</div>
 
-<section id="past-events">
-  <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
-        <div class="logo-left">
-          <a href="/">
-            <!-- <img class="navbar-brand" id="logo" src="<%# asset_path('primetimelogo1.png')%>" /> -->
-          </a>
-        </div>
-                <%= link_to "Home", root_path, class:"nav-link" %>
-                <%= link_to "Public Events", public_events_past_events_path, class:"nav-link" %>
-                <%= link_to "Private Events", private_events_past_events_path, class:"nav-link" %>
-        <% if current_user %>
-        <!-- <div class="subnav"> -->
-            <!-- <div class="subnav-content"> -->
-                <%= link_to "Add past events", new_past_event_path, class:"nav-link" %>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
-            <!-- </div> -->
-        <!-- </div> -->
-
+<!-- content -->
+<div class="container">
+  <div class="event-structure-container index">
+    <h4>PAST EXPERIENCES</h4>
+    <div class="event-structure-cards">
+      <% @past_events.each do |p| %>
+      <div class="event-structure-card">
+      <!-- Photo, logo as default -->
+        <% if p.photos.empty? %>
+          <img class="first-image" src="<%= asset_path('primetimelogo1.png')%>" />
+        <% else %>
+          <%= cl_image_tag p.photos[0].key, class:"first-image" %>
         <% end %>
-
-        <!-- </ul> -->
-        <!-- </div> -->
-  </div>
-
-    <div class="event-structure-container index">
-        <h4>PAST EXPERIENCES</h4>
-
-        <div class="event-structure-cards">
-            <% @past_events.each do |p| %>
-            <div class="event-structure-card">
-              <!-- <div class="slideshow-container"> -->
-                      <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
-                  <%# p.photos.each do |photo| %>
-                  <!-- <div class="mySlides"> -->
-                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                  <!-- </div> -->
-                  <%# end %>
-              <!-- </div> -->
-
-              <div class="business-info">
-                  <h5 class="my-pipeline-title">
-                      <%= link_to p.title.upcase, past_event_path(p) %>
-                  </h5>
-                  <p class="my-pipeline-text">
-                      <p><%= p.description %></p>
-                      <p><%= p.location %>
-                       | From
-                      <%= p.date_start.strftime("%-d %B") %> to
-                      <%= p.date_end.strftime("%-d %B %Y") %></p>
-                      <% if !p.photos.empty? %>
-                      <% end %>
-                  </p>
-              </div>
-            </div>
-
-            <% end %>
+        <div class="business-info">
+          <h5 class="my-pipeline-title">
+            <%= link_to p.title.upcase, past_event_path(p) %>
+          </h5>
+          <p class="my-pipeline-text">
+            <p><%= p.description %></p>
+            <p><%= p.location %>
+             | From
+            <%= p.date_start.strftime("%-d %B") %> to
+            <%= p.date_end.strftime("%-d %B %Y") %></p>
+          </p>
         </div>
-
+      </div>
+    <% end %>
     </div>
-</section>
-
+  </div>
+</div>
 
 <script>
 
@@ -75,28 +53,5 @@ window.onscroll = function() {
     }
     prevScrollpos = currentScrollPos;
 }
-
-// carousel
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  };
-  slides[slideIndex-1].style.display = "block";
-};
 
 </script>

@@ -1,12 +1,10 @@
 <%= simple_form_for @past_event do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :date_start %>
-  <%= f.input :date_end %>
+  <%= f.input :date_start, as: :string, input_html: {class: "datepicker"} %>
+  <%= f.input :date_end, as: :string, input_html: {class: "datepicker"} %>
   <%= f.input :location %>
   <%= f.input :category, :as => :check_boxes, :collection => [["Public Event", "Public Event"], ["Private Event", "Private Event"]] %>
-  <%# f.radio_button :category, "Public Event", params[:category] %>
-  <%# f.radio_button :category, "Private Event", params[:category] %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit%>
 <% end %>

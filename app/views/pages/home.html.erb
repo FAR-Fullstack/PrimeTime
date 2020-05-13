@@ -6,7 +6,6 @@
     <!-- navbar -->
     <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <a class="nav-link" href="#Structure">STRUCTURE</a>
-        <a class="nav-link" href="#past-events">EVENTS</a>
         <% if current_user %>
         <div class="subnav">
             <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
@@ -22,9 +21,6 @@
         <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
         <% end %>
         <a class="nav-link" href="#team">TEAM</a>
-        <a class="nav-link" href="#contact">CONTACT</a>
-        <!-- </ul> -->
-        <!-- </div> -->
     </div>
     <!-- banner with logo -->
     <div class="banner-and-intro">
@@ -36,10 +32,9 @@
         </div>
     </div>
     <!-- pipeline events -->
-    <div class="pipeline">
-        <!-- <h5>A GOAL WITHOUT A PLAN IS JUST A WISH</h5> -->
+    <% if !@future_events.empty? %>
+      <div class="pipeline">
         <h4>WHAT IS COMING</h4>
-        <!-- <p>A LITTLE BIT MORE DETAILS ON WHAT IS COMING</p> -->
         <div class="col-container">
             <div class="pipeline-row">
                 <% @future_events.each do |future_event| %>
@@ -56,42 +51,17 @@
                     <p class="pipeline-text"><small class="text-muted">
                             <%= future_event.date_start.strftime("%-d %B") %> to
                             <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
-                    <!--             <div class="button-separation">
-            <button class="button">More Info</button>
-            </div> -->
                 </div>
                 <% end %>
             </div>
-        </div>
-        <!-- see more button showing more events -->
-        <!-- <div>
-        <input type="checkbox" class="read-more-state" id="post-2" />
-        <ul class="read-more-wrap">
-          <div class="pipeline-row">
-            <div class="read-more-target pipeline-card">
-                  <h5 class="pipeline-title">START-UPS B2B MEET-UPS AND SEMINARS</h5>
-                  <p class="pipeline-text"><small class="text-muted">October 2020</small></p>
-            </div>
-            <div class="read-more-target pipeline-card">
-                  <h5 class="pipeline-title">GUEST SPEAKERS CONFERENCES</h5>
-                  <p class="pipeline-text"><small class="text-muted">November 2020</small></p>
-            </div>
-            <div class="read-more-target pipeline-card">
-                  <h5 class="pipeline-title">KOREAN CHRISTMAS MARKET</h5>
-                  <p class="pipeline-text"><small class="text-muted">December 2020</small></p>
-            </div>
           </div>
-        </ul>
-        <label for="post-2" class="read-more-trigger"></label>
-      </div> -->
-</div>
+      </div>
+    <% end %>
 
 <!-- events type section -->
 <section id="Structure">
 <div class="business-structure-container">
-    <!-- <h5>HOW PRIMETIME OPERATES</h5> -->
     <h4>BUSINESS STRUCTURE</h4>
-    <!-- <p>EVERYBODY SHOULD GET A SLICE OF THE PIE</p> -->
     <div class="business-structure-cards">
         <div class="business-card">
             <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
@@ -127,124 +97,77 @@
 </div>
 </section>
 
-    <!-- past events page-->
-<!--     <section id="past-events">
-        <div class="event-structure-container">
+<!-- meet the team -->
+<section id="team">
+<div class="the-team">
+  <h4>TEAM</h4>
+  <div class="team-row">
+      <div class="full-team-cards">
+          <div class="full-team-card">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>JAY LEE</h4>
+                                  <h6 class="title">FOUNDER AND PRESIDENT</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>SAMUEL SONG</h4>
+                                  <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+                                      <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>SEOYO LEE</h4>
+                                  <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>SEBASTIEN HAN</h4>
+                                  <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>EUN KIM</h4>
+                                  <h6 class="title">SALES AND MARKETING MANAGER</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>SWAN KIM</h4>
+                                  <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                          <div class="team-column">
+                              <div class="team-card">
+                                  <h4>KUNWOO KOO</h4>
+                                  <h6 class="title">ON-SITE ASSOCIATE</h6>
+                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </a>
+      </div>
+  </div>
+</div>
+</section>
 
-            <h4>PAST EXPERIENCES</h4>
-            <div class="event-structure-cards">
-                <%# @past_events.each do |p| %>
-                <div class="event-structure-card">
-
-                            <%# cl_image_tag p.photos[0].key, style:"width:100%" %>
-
-                    <div class="business-info">
-                        <h5 class="past-event-title">
-                            <%# link_to p.title, past_event_path(p) %>
-                        </h5>
-                        <p class="past-event-text">
-                            <%# p.description %>
-                            <%# p.location %> From
-                            <%# p.date_start %> to
-                            <%# p.date_end %>
-                            <%# if !p.photos.empty? %>
-                            <%# end %>
-                        </p>
-                        <div class="button-container">
-                        </div>
-                    </div>
-                </div>
-                <%# end %>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- meet the team -->
-    <section id="team">
-    <div class="the-team">
-        <!-- <h5>PRIMETIME’S TEAM</h5> -->
-        <h4>TEAM</h4>
-        <!-- <p>NO ONE CAN WHISTLE A SYMPHONY. IT TAKES A WHOLE ORCHESTRA TO PLAY IT.</p> -->
-        <div class="team-row">
-            <div class="full-team-cards">
-                <div class="full-team-card">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>JAY LEE</h4>
-                                        <h6 class="title">FOUNDER AND PRESIDENT</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>SAMUEL SONG</h4>
-                                        <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-                                            <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>SEOYO LEE</h4>
-                                        <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>SEBASTIEN HAN</h4>
-                                        <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>EUN KIM</h4>
-                                        <h6 class="title">SALES AND MARKETING MANAGER</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                                <!-- <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>HAYAN KIM</h4>
-                                        <h6 class="title">COMMUNICATION AND PR MANAGER</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div> -->
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>SWAN KIM</h4>
-                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                                <div class="team-column">
-                                    <div class="team-card">
-                                        <h4>KUNWOO KOO</h4>
-                                        <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                        <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span> -->
-                </a>
-            </div>
-        </div>
-    </div>
-    </section>
     <!-- contact us section -->
     <!-- <section id="contact">
         <div class="contact-container">
