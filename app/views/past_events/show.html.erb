@@ -40,13 +40,10 @@
             </p>
             <% end %>
         </div>
-
         <% @past_event.photos.each do |photo| %>
-        <div class="column">
-            <%= cl_image_tag photo.key, style:"width:100%" %>
-            <% if current_user %>
-                <%= link_to "delete", delete_one_photo_past_event_path(photo), data: { confirm: "Are you sure?" }, method: :delete %>
-            <% end %>
+            <div class="zoom">
+                <%= cl_image_tag photo.key, style:"width:100%" %>
+            </div>
         </div>
         <% end %>
     </div>
