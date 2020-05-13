@@ -1,19 +1,16 @@
 <!-- index future events -->
 <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
-        <div class="logo-left">
-          <a href="/">
-            <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
-          </a>
-        </div>
-        <% if current_user %>
-        <!-- <div class="subnav"> -->
-            <!-- <div class="subnav-content"> -->
-                <%= link_to "Add future events", new_future_event_path, class:"nav-link"%>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
-            <!-- </div> -->
-        <!-- </div> -->
-
-        <% end %>
+  <% if current_user %>
+    <%= link_to "Home", root_path, class:"nav-link" %>
+    <%= link_to "Add future events", new_future_event_path, class:"nav-link"%>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+  <% else %>
+    <div class="logo-left">
+      <a href="/">
+        <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
+      </a>
+    </div>
+  <% end %>
 
         <!-- </ul> -->
         <!-- </div> -->
