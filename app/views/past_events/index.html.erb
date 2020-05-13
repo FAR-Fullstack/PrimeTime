@@ -28,15 +28,14 @@
 
         <div class="event-structure-cards">
             <% @past_events.each do |p| %>
-            <div class="event-structure-card">
+           <!-- <div class="event-structure-card">-->
               <!-- <div class="slideshow-container"> -->
                       <%= cl_image_tag p.photos[0].key, style:"width:100%" %>
                   <%# p.photos.each do |photo| %>
                   <!-- <div class="mySlides"> -->
                   <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                  <!-- </div> -->
-                  <%# end %>
+           <!-- </div>-->
               <!-- </div> -->
 
               <div class="business-info">
@@ -53,9 +52,9 @@
                       <% end %>
                   </p>
               </div>
+            <% end %>
             </div>
 
-            <% end %>
         </div>
 
     </div>
