@@ -21,6 +21,7 @@
     <h4>PAST EXPERIENCES</h4>
     <div class="event-structure-cards">
       <% @past_events.each do |p| %>
+      <div class="event-structure-card">
       <!-- Photo, logo as default -->
         <% if p.photos.empty? %>
           <img class="first-image" src="<%= asset_path('primetimelogo1.png')%>" />
@@ -39,7 +40,8 @@
             <%= p.date_end.strftime("%-d %B %Y") %></p>
           </p>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
