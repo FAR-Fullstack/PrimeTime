@@ -1,11 +1,15 @@
 <div class="wrapper">
+
     <section id="home">
         <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1485628390555-1a7bd503f9fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")>
         </div>
     </section>
+
     <!-- navbar -->
     <div class="navbar navbar-expand navbar-light d-flex p-0 navbar-lewagon justify-content-center">
         <a class="nav-link" href="#Structure">STRUCTURE</a>
+        
+        <%= link_to "PAST EVENTS", past_events_path, class:"nav-link" %>
         <% if current_user %>
         <div class="subnav">
             <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
@@ -20,8 +24,10 @@
         <% else %>
         <img class="navbar-brand" id="logo" src="<%= asset_path('primetimelogo1.png')%>" />
         <% end %>
+        <a class="nav-link" href="#what-is-coming">WHAT IS COMING</a>
         <a class="nav-link" href="#team">TEAM</a>
     </div>
+
     <!-- banner with logo -->
     <div class="banner-and-intro">
         <!-- intro section -->
@@ -31,142 +37,147 @@
             <p>With a large network of economic and cultural players, our role is ultimately to respond to a real need for adaptation in the context of globalization, and to offer a new perspective based on the development of concrete actions with multiple objectives. We thus generate conversations and relationships feeding the spaces of exchanges, media and digital visibilities.</p>
         </div>
     </div>
+
     <!-- pipeline events -->
-    <% if !@future_events.empty? %>
-      <div class="pipeline">
-        <h4>WHAT IS COMING</h4>
-        <div class="col-container">
-            <div class="pipeline-row">
-                <% @future_events.each do |future_event| %>
-                <div class="pipeline-card">
-                    <h5 class="pipeline-title">
-                        <%= future_event.title.upcase %>
-                    </h5>
-                    <p>
-                        <%= future_event.description.capitalize %>
-                    </p>
-                    <p class="pipeline-text">
-                        <%= future_event.location.upcase %>
-                    </p>
-                    <p class="pipeline-text"><small class="text-muted">
-                            <%= future_event.date_start.strftime("%-d %B") %> to
-                            <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
+    <section id="what-is-coming">
+        <% if !@future_events.empty? %>
+        <div class="pipeline">
+            <h4>WHAT IS COMING</h4>
+            <div class="col-container">
+                <div class="pipeline-row">
+                    <% @future_events.each do |future_event| %>
+                    <div class="pipeline-card">
+                        <h5 class="pipeline-title">
+                            <%= future_event.title.upcase %>
+                        </h5>
+                        <p class="pipeline-description">
+                            <%= future_event.description.capitalize %>
+                        </p>
+                        <p class="pipeline-text">
+                            <%= future_event.location.upcase %>
+                        </p>
+                        <p class="pipeline-text"><small class="text-muted">
+                                <%= future_event.date_start.strftime("%-d %B") %> to
+                                <%= future_event.date_end.strftime("%-d %B %Y") %></small></p>
+                    </div>
+                    <% end %>
                 </div>
-                <% end %>
             </div>
-          </div>
-      </div>
-    <% end %>
+        </div>
+        <% end %>
+    </section>
 
-<!-- events type section -->
-<section id="Structure">
-<div class="business-structure-container">
-    <h4>BUSINESS STRUCTURE</h4>
-    <div class="business-structure-cards">
-        <div class="business-card">
-            <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
-            <div class="business-info type">
-                <h5>PRIVATE EVENTS</h5>
-                <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
-                <div class="button-container">
-                <button class="button"><%= link_to "See All", private_events_past_events_path %></button>
+    <!-- events type section -->
+    <section id="Structure">
+        <div class="business-structure-container">
+            <h4>BUSINESS STRUCTURE</h4>
+            <div class="business-structure-cards">
+                <div class="business-card">
+                    <img src="https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260v" class="card-img-top" alt="...">
+                    <div class="business-info type">
+                        <h5>PRIVATE EVENTS</h5>
+                        <p>Creation and planning of customized events for our private clients, that are as distinctive as they are compelling.</p>
+                        <div class="button-container">
+                            <button class="button">
+                                <%= link_to "See All", private_events_past_events_path %></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                    <div class="business-info type">
+                        <h5>PUBLIC EVENTS</h5>
+                        <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
+                        <div class="button-container">
+                            <button class="button">
+                                <%= link_to "See All", public_events_past_events_path %></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                    <div class="business-info type">
+                        <h5>PRODUCTION</h5>
+                        <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
+                        <div class="button-container">
+                            <button class="button">See All</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="business-card">
-            <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-            <div class="business-info type">
-                <h5>PUBLIC EVENTS</h5>
-                <p>Creation of unique experiences through public and free events/festivals, to sensibilise the Korean culture to the French population.</p>
-                <div class="button-container">
-                <button class="button"><%= link_to "See All", public_events_past_events_path %></button>
-                </div>
-            </div>
-        </div>
-        <div class="business-card">
-            <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-            <div class="business-info type">
-                <h5>PRODUCTION</h5>
-                <p>Audit, analysis, marketing and recommendations, as well as content creation around and during your events.</p>
-                <div class="button-container">
-                <button class="button">See All</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
+    </section>
 
-<!-- meet the team -->
-<section id="team">
-<div class="the-team">
-  <h4>TEAM</h4>
-  <div class="team-row">
-      <div class="full-team-cards">
-          <div class="full-team-card">
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>JAY LEE</h4>
-                                  <h6 class="title">FOUNDER AND PRESIDENT</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>SAMUEL SONG</h4>
-                                  <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
-                                      <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>SEOYO LEE</h4>
-                                  <h6 class="title">HEAD OF SALES AND MARKETING</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>SEBASTIEN HAN</h4>
-                                  <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>EUN KIM</h4>
-                                  <h6 class="title">SALES AND MARKETING MANAGER</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>SWAN KIM</h4>
-                                  <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                          <div class="team-column">
-                              <div class="team-card">
-                                  <h4>KUNWOO KOO</h4>
-                                  <h6 class="title">ON-SITE ASSOCIATE</h6>
-                                  <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          </a>
-      </div>
-  </div>
-</div>
-</section>
+    <!-- meet the team -->
+    <section id="team">
+        <div class="the-team">
+            <h4>TEAM</h4>
+            <div class="team-row">
+                <div class="full-team-cards">
+                    <div class="full-team-card">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>JAY LEE</h4>
+                                            <h6 class="title">FOUNDER AND PRESIDENT</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">JAEYO.LEE@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>SAMUEL SONG</h4>
+                                            <h6 class="title">CO-FOUNDER AND VICE PRESIDENT</h5>
+                                                <p class="pipeline-text email"><small class="text-muted">SAMUEL.SONG@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>SEOYO LEE</h4>
+                                            <h6 class="title">HEAD OF SALES AND MARKETING</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">SEOYO.LEE@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>SEBASTIEN HAN</h4>
+                                            <h6 class="title">HEAD OF COMMUNICATION AND PR</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">SEBASTIEN.HAN@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>EUN KIM</h4>
+                                            <h6 class="title">SALES AND MARKETING MANAGER</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>SWAN KIM</h4>
+                                            <h6 class="title">ON-SITE TEAM LEADER</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="team-column">
+                                        <div class="team-card">
+                                            <h4>KUNWOO KOO</h4>
+                                            <h6 class="title">ON-SITE TEAM LEADER</h6>
+                                            <p class="pipeline-text email"><small class="text-muted">INFO@PRIMETIMEFR.COM</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- contact us section -->
     <!-- <section id="contact">
@@ -198,47 +209,48 @@
             </div>
         </div> -->
 
-</section>
-<!-- footer -->
-<div class="footer">
-    <div class="footer-links">
-        <a href="https://www.instagram.com/primetime.fr/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/primetime.fr" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-    <div class="footer-copyright">
-        Website made by <a href="https://github.com/FAR-Fullstack" target="_blank">FAR</a>
 
-    </div>
-    <div>
-        <%= link_to "Admin corner", new_user_session_path %>
-    </div>
-</div>
-<script>
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-        document.getElementById("navbar").style.top = "-150px";
-    }
-    prevScrollpos = currentScrollPos;
-}
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="https://www.instagram.com/primetime.fr/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/primetime.fr" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="footer-copyright">
+            Website made by <a href="https://github.com/FAR-Fullstack" target="_blank">FAR</a>
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+        </div>
+        <div>
+            <%= link_to "Admin corner", new_user_session_path %>
+        </div>
+    </div>
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
-</script>
+  <script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+      } else {
+          document.getElementById("navbar").style.top = "-150px";
+      }
+      prevScrollpos = currentScrollPos;
+  }
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+              content.style.display = "none";
+          } else {
+              content.style.display = "block";
+          }
+      });
+  }
+  </script>
 <!-- end of wrapper -->
 </div>

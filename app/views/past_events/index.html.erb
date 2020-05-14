@@ -10,6 +10,7 @@
 </div>
 
 <!-- content -->
+<section class="all-events">
 <div class="container">
   <div class="event-structure-container index">
     <h4>PAST EXPERIENCES</h4>
@@ -27,7 +28,7 @@
             <%= link_to p.title.upcase, past_event_path(p) %>
           </h5>
           <p class="my-pipeline-text">
-            <p><%= p.description %></p>
+            <p class="my-pipeline-description"><%= p.description %></p>
             <p><%= p.location %>
              | From
             <%= p.date_start.strftime("%-d %B") %> to
@@ -39,6 +40,7 @@
     </div>
   </div>
 </div>
+</section>
 
 <script>
 

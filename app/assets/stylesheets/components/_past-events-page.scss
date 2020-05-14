@@ -56,6 +56,24 @@
   margin: 20px;
 }
 
+.my-pipeline-description {
+  background-color: white;
+  width: auto;
+  height: 100px;
+  padding: 10px;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+// .my-pipeline-description::-webkit-scrollbar {
+//     display: none;
+// }
+
+/* Hide scrollbar for IE and Edge */
+.my-pipeline-description {
+    -ms-overflow-style: none;
+}
+
 .zoom {
   transition: transform .2s;
 }

@@ -69,6 +69,25 @@
   font-size: 30px;
 }
 
+.pipeline-description {
+  background-color: transparent;
+  width: auto;
+  height: 130px;
+  border: 1px solid #dadada;
+  overflow-y: scroll; /* Add the ability to scroll */
+  padding: 3px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pipeline-description::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.pipeline-description {
+    -ms-overflow-style: none;
+}
+
 .my-pipeline-title a {
   text-align: center;
   color: #CCB774;
