@@ -25,8 +25,8 @@
           <p class="my-pipeline-text"> <%= p.description %> </p>
           <p class="my-pipeline-text"> <%= p.location %> </p>
           <p class="my-pipeline-text"> From
-                      <%= p.date_start %> to
-                      <%= p.date_end %> </p>
+                      <%= p.date_start.strftime("%-d %B") %> to
+                      <%= p.date_end.strftime("%-d %B %Y") %> </p>
           <p class="my-pipeline-text"></p>
         </div>
       </div>
