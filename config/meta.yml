@@ -1,7 +1,7 @@
 # config/meta.yml
 
-meta_product_name: "Primetimefr"
-meta_title: "Events and Communication"
+meta_product_name: "Primetime"
+meta_title: "Primetime - Events and Communication"
 meta_description: "Aiming at promoting intercultural and commercial exchanges between France and Korea, Primetime brings together a young and dynamic team oriented towards the collective and open to the world."
 meta_image: "cover.jpeg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
